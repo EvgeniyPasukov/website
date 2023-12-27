@@ -1,0 +1,407 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% block title %}Продукция{% endblock %}
+
+{% block body %}
+<script src="/static/main/js/slider-power.js" defer></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />-->
+
+
+        <div class="page-footer__separator-line">
+        </div>
+        <div class="container container-prod">
+            <div class="">
+                <div class="col-md-3">
+                    <div class="filters-menu">
+                        <div class="filters-menu-block">
+                                <div class="filters-menu-heading">
+                                        <span>Категория</span>
+                                </div>
+                                <div class="filters-menu-content">
+                                                <input type="checkbox" name="street" id="street1" value="light">
+                                                        <label for="street1">Уличные</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street2" value="light">
+                                                        <label for="street2">Сменные светодиодные модули</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street3" value="light">
+                                                <label for="street3">Комплектующие типа Армстронг</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street4" value="light">
+                                                <label for="street4">Промышленное освещение</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street5" value="light">
+                                                <label for="street5">Торгово-офисные</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street6" value="light">
+                                                <label for="street6">Архитектурные</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street7" value="light">
+                                                <label for="street7">Спортивное освещение</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="street8" value="light">
+                                                <label for="street8">Светодиодные лампы</label>
+                                        <br>
+                                </div>
+                        </div>
+
+
+                        <div class="filters-menu-block">
+                                <div class="filters-menu-heading">
+                                        <span>Мощность, Вт</span>
+                                </div>
+                                <div class="filters-menu-content">
+                                    <div id="slider-outer-div-power">
+                                        <div class="col-md-2 form-label">от</div>
+                                        <div id="slider-max-label" class="form-control input-sm disabled col-md-4"></div>
+                                        <div class="col-md-2 form-label">до</div>
+                                        <div id="slider-min-label" class="form-control input-sm disabled col-md-4"></div>
+                                        {% block slider %}
+                                            <div id="slider-div">
+                                                        <div class="form-group form-group-range col-md-12">
+                                                            <label for="ex2">
+                                                                <input type="text"  id="ex2" data-slider-min="10"
+                                                                data-slider-max="1500" data-slider-step="10" data-slider-value="[10,1500]"
+                                                                data-slider-tooltip="hide" class="form-control input-sm disabled" disabled="" >
+                                                            </label>
+                                                        </div>
+                                            </div>
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                        </div>
+
+
+                        <div class="filters-menu-block">
+                                <div class="filters-menu-heading">
+                                        <span>Цветовая температура, К</span>
+                                </div>
+                                <div class="filters-menu-content">
+                                        <input type="checkbox" name="street" id="temp1" value="light">
+                                                <label for="temp1">3000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp2" value="light">
+                                        <label for="temp2">3500</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp3" value="light">
+                                        <label for="temp3">4000/5000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp4" value="light">
+                                        <label for="temp4">4000/6000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp5" value="light">
+                                        <label for="temp5">4000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp6" value="light">
+                                        <label for="temp6">4500</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp7" value="light">
+                                        <label for="temp7">5000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp8" value="light">
+                                        <label for="temp8">5700</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp9" value="light">
+                                        <label for="temp9">6000</label>
+                                <br>
+                                <input type="checkbox" name="street" id="temp10" value="light">
+                                        <label for="temp10">6500</label>
+                                <br>
+                                </div>
+                        </div>
+
+
+
+                        <div class="filters-menu-block">
+                                <div class="filters-menu-heading">
+                                        <span>Степень защиты</span>
+                                </div>
+                                <div class="filters-menu-content">
+                                                <input type="checkbox" name="street" id="ip1" value="light">
+                                                        <label for="ip1">ip40</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="ip2" value="light">
+                                                        <label for="ip2">ip54</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="ip3" value="light">
+                                                <label for="ip3">ip65</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="ip4" value="light">
+                                                <label for="ip4">ip66</label>
+                                        <br>
+                                        <input type="checkbox" name="street" id="ip5" value="light">
+                                                <label for="ip5">ip67</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="row ">
+                {% for task in tasks %}
+                <!--loop-->
+                <div class="product-card">
+                    <div class="product-thumb">
+                        <a href="#"><img src="{{ task.image }}" alt=""></a>
+                    </div>
+                    <div class="product-details">
+                        <h4><a href="#">{{ el.name }}</a></h4>
+                        <div class="product-bottom-details d-flex justify-content-center">
+                            <div class="product-links">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!--endloop-->
+            </div>
+        </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
+                <!--filter-->
+        <!--<form action="" method="" id="">-->
+        <!--<div class="container">
+                <fieldset>
+                        <div class="dropdown">
+                                <button onclick="myFunction()" class="dropbtn">
+                                        <span>Категория</span>
+                                        <div class="toggle-arrow"></div>
+                                        <div id="myDropdown" class="dropdown-content">
+                                                <input type="checkbox" name="resource|parent" id="mse2_resource|parent_0" value="" disabled="" class="disabled">
+                                                        <label for="mse2_resource|parent_0" class="leftside">Уличные
+                                                        </label>
+                                                        <br>
+                                                <input type="checkbox" name="resource|parent" id="mse2_resource|parent_1" value="" disabled="" class="disabled">
+                                                        <label for="mse2_resource|parent_1" class="" >Сменные светодиодные модули
+                                                        </label>
+                                                        <br>
+                                                <input type="checkbox" name="resource|parent" id="mse2_resource|parent_2" value="" disabled="" class="disabled">
+                                                        <label for="mse2_resource|parent_2" class="">Комплектующие к светильникам типа Армстронг
+                                                        </label>
+                                                        <br>
+                                        </div>
+                                </button>
+                        </div>
+                </fieldset>
+        </div>
+        </form>-->
+
+
+
+        <!--<div class="container">
+                <div class="col-lg-3 aside aside--left fixed-col js-filter-col">
+                        <div class="fixed-col_container">
+                            <div class="sidebar-block sidebar-block--mobile d-block d-lg-none">
+                                <div class="d-flex align-items-center">
+                                </div>
+                            </div>
+                            <form action="katalog-svetodiodnogo-osveshheniya/" method="post" id="mse2_filters">
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_resource|parent" class="">
+                                                <div class="sidebar-block_title"><span>Категория</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+	                                            <div class="sidebar-block_content" style="opacity: 1; display: none;">
+       	                                                <input type="checkbox" name="resource|parent" id="mse2_resource|parent_0" value="98" disabled="" class="disabled">
+                                                                <label for="mse2_resource|parent_0" class="">Уличные <sup></sup>
+                                                                </label>
+                                                                <br>
+                                                        <input type="checkbox" name="resource|parent" id="mse2_resource|parent_1" value="141" disabled="" class="disabled">
+                                                                <label for="mse2_resource|parent_1" class="">Сменные светодиодные модули <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_tv|power" class="">
+                                                <div class="sidebar-block_title"><span>Мощность, Вт</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+                                                <div class="sidebar-block_content" style="opacity: 1; display: none;">
+                                                        <div class="mse2_number_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                                                <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 90.738255%;"></div>
+                                                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
+                                                                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 90.738255%;"></span>
+                                                        </div>
+                                                        <div class="mse2_number_inputs">
+                                                                <div class="form-group col-md-6">
+                                                                        <label for="mse2_tv|power_0">От
+                                                                                <input type="text" name="tv|power" id="mse2_tv|power_0" value="10" class="form-control input-sm disabled" disabled="">
+                                                                        </label>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                        <label for="mse2_tv|power_1">До
+                                                                                <input type="text" name="tv|power" id="mse2_tv|power_1" value="1500" class="form-control input-sm disabled" disabled="">
+                                                                        </label>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_tv|potok">
+                                                <div class="sidebar-block_title"><span>Поток, Лм</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+                                                <div class="sidebar-block_content" style="opacity: 1;display: none;">
+                                                        <div class="mse2_number_slider ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
+                                                                <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0%; width: 100%;"></div>
+                                                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0%;"></span>
+                                                                        <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
+                                                                </div>
+                                                        <div class="mse2_number_inputs">
+                                                                <div class="form-group col-md-6">
+                                                                        <label for="mse2_tv|potok_0">От
+                                                                                <input type="text" name="tv|potok" id="mse2_tv|potok_0" value="1000" class="form-control input-sm disabled" disabled="">
+                                                                        </label>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                        <label for="mse2_tv|potok_1">До
+                                                                                <input type="text" name="tv|potok" id="mse2_tv|potok_1" value="140000" class="form-control input-sm disabled" disabled="">
+                                                                        </label>
+                                                                </div>
+
+                                                        </div>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_tv|colortemp">
+                                                <div class="sidebar-block_title"><span>Цветовая температура, К</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+                                                <div class="sidebar-block_content" style="opacity: 1;display: none;">
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_0" value="3000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_0" class="">3000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_1" value="3500" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_1" class="">3500 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_2" value="4000 / 5000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_2" class="">4000 / 5000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_3" value="4000 / 6000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_3" class="">4000 / 6000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_4" value="4000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_4" class="">4000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_5" value="4500" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_5" class="">4500 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_6" value="5000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_6" class="">5000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_7" value="5700" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_7" class="">5700 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_8" value="6000" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_8" class="">6000 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|colortemp" id="mse2_tv|colortemp_9" value="6500" disabled="" class="disabled">
+                                                                <label for="mse2_tv|colortemp_9" class="">6500 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_tv|dimir" class="">
+                                                <div class="sidebar-block_title"><span>Диммирование</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+                                                <div class="sidebar-block_content" style="opacity: 1; display: none;">
+                                                        <input type="checkbox" name="tv|dimir" id="mse2_tv|dimir_0" value="Да" disabled="" class="disabled">
+                                                                <label for="mse2_tv|dimir_0" class="">Да <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|dimir" id="mse2_tv|dimir_1" value="Нет" disabled="" class="disabled">
+                                                                <label for="mse2_tv|dimir_1" class="">Нет <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <div class="sidebar-block filter-group-block">
+                                        <fieldset id="mse2_tv|ip">
+                                                <div class="sidebar-block_title"><span>Степень защиты</span>
+                                                        <div class="toggle-arrow"></div>
+                                                </div>
+                                                <div class="sidebar-block_content" style="opacity: 1;display: none;">
+                                                        <input type="checkbox" name="tv|ip" id="mse2_tv|ip_0" value="IP40" disabled="" class="disabled">
+                                                                <label for="mse2_tv|ip_0" class="">IP40 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|ip" id="mse2_tv|ip_1" value="IP54" disabled="" class="disabled">
+                                                                <label for="mse2_tv|ip_1" class="">IP54 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|ip" id="mse2_tv|ip_2" value="IP65" disabled="" class="disabled">
+                                                                <label for="mse2_tv|ip_2" class="">IP65 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|ip" id="mse2_tv|ip_3" value="IP66" disabled="" class="disabled">
+                                                                <label for="mse2_tv|ip_3" class="">IP66 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                        <input type="checkbox" name="tv|ip" id="mse2_tv|ip_4" value="IP67" disabled="" class="disabled">
+                                                                <label for="mse2_tv|ip_4" class="">IP67 <sup></sup>
+                                                                </label>
+                                                        <br>
+                                                </div>
+                                        </fieldset>
+                                    </div>
+                                    <br>
+                                    <div class="sidebar-block filter-group-block">
+                                            <div class="sidebar-block_title"><span>Выбранные фильтры</span>
+                                                    <div class="toggle-arrow"></div>
+                                            </div>
+                                            <div class="sidebar-block_content" style="display: none;">
+                                                    <div class="selected-filters-wrap" id="mse2_selected_wrapper">
+                                                            <div id="mse2_selected">
+                                                                    <ul class="selected-filters">
+                                                                            <span></span>
+                                                                    </ul>
+                                                            </div>
+                                                            <div class="d-flex align-items-center">
+                                                                    <button type="reset" class="btn btn-default">Сбросить</button>
+                                                                    <div class="clearfix"></div>
+                                                                    <div class="selected-count ml-auto d-none d-lg-block"><span></span></div>
+                                                            </div>
+                                                    </div>
+                                            </div>
+                                    </div>
+                            </form>
+                        </div>
+                </div>
+        </div>-->
+
+
+
+<!--{% if item %}
+            {% for el in item %}
+                <h3>{{ el.param }}</h3>
+            {% endfor %}
+        {% else %}
+            <p>pusto</p>
+        {% endif %}-->

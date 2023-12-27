@@ -1,0 +1,264 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+    {% block header %}
+    <header>
+       <div class="logo">
+           <a href="{% url 'home' %}"><img src="/static/main/img/ASV-LED.png" width="220" height="60" alt="homeBTN"></a>
+       </div>
+       <nav class="menu">
+           <ul>
+                <li><a href="{% url 'about' %}">О нас</a></li>
+                <li><a href="{% url 'catalog' %}">Продукция</a></li>
+                <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
+                <li><a href="{% url 'calc' %}">Светорасчет</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+           </ul>
+       </nav>
+       <div class="tel">
+           <a href="tel:74956498133">+7(495)649-81-33</a>
+       </div>
+    </header>
+    {% endblock %}
+{% block body %}
+    <div class="itc-slider" data-autoplay="true" data-interval="4000" data-loop="true" data-refresh="true" data-slider="itc-slider">
+        <div class="itc-slider-wrapper">
+            <div class="itc-slider-items">
+                <div class="itc-slider-item">
+                    <img src="/static/main/img/ASV.png" alt="" class="slide-pref">
+                      <div class="shadow">
+                          <h1>Светорассчет</h1>
+                          <h2>Опытные специалисты всегда готовы оказать помощь в светорасчете для ваших нужд</h2>
+                          <button class="btn btn--first" data-link="/">В каталог</button>
+                      </div>
+                </div>
+                <div class="itc-slider-item">
+                    <img src="/static/main/img/ASV.png" alt="" class="slide-pref">
+                      <div class="shadow">
+                          <h1>Новинки!</h1>
+                          <h2>Прожекторы PCC022 и лампы PCC1020</h2>
+                          <button class="btn btn--first" data-link="/">Подробнее</button>
+                      </div>
+                </div>
+                <div class="itc-slider-item">
+                    <img src="/static/main/img/ASV.png" alt="" class="slide-pref">
+                      <div class="shadow">
+                          <h1>Офисное освещение</h1>
+                          <h2>краткая информация и много-многомного-многомного-многомного-много другой проверочной фигни</h2>
+                          <button class="btn btn--first" data-link="/">Подробнее</button>
+                      </div>
+                </div>
+                <div class="itc-slider-item">
+                    <img src="/static/main/img/ASV.png" alt="" class="slide-pref">
+                      <div class="shadow">
+                          <h1>Наше производство</h1>
+                          <h2>находится в индустриальном парке Великий-камень</h2>
+                          <button class="btn btn--first" data-link="/">Подробнее</button>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+        <button class="itc-slider-btn itc-slider-btn-prev"></button>
+        <button class="itc-slider-btn itc-slider-btn-next"></button>
+    </div>
+    <section class="product-section">
+            <div class="grid-container">
+                <div class="grid-row">
+                    <div class="col-md-12">
+                        <h2 class="brand-jumbotron__desc-title">Продукция</h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
+                            <div class="slider-products__slide">
+                                <a class="product-section__item" href="/">
+                                    <img src="/static/main/img/komm.jpg" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Офисное освещение</div>
+                                </a>
+                            </div>
+                            <div class="slider-products__slide">
+                                <a class="product-section__item" href="/products/svetilniki-dlya-zhkkh/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Светильники для ЖКХ</div>
+                                </a>
+                            </div>
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/promyshlennoe-osveshchenie/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Промышленное освещение</div>
+                                </a>
+                            </div>
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/prozhektory/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Прожекторы</div>
+                                </a>
+                            </div>
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/ulichnoe-osveshchenie/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Уличное освещение</div>
+                                </a>
+                            </div>
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/ofisnye-svetilniki-dlya-nestandartnykh-potolkov/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Офисные светильники для нестандартных потолков</div>
+                                </a>
+                            </div>
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/lineynye-svetilniki-dlya-vnutrennego-osveshcheniya/">
+                                    <img src="/static/main/img/ASV.png" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">Линейные светильники для внутреннего освещения</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+                <!-- PORTFOLIO -->
+<div class="page-footer__separator ninja--xs">
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-footer__separator-line">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="product-section">
+            <div class="grid-container-portfolio">
+                <div class="grid-row">
+                    <div class="col-md-12">
+                        <h2 class="brand-jumbotron__desc-title">Портфолио</h2>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="slider-products">
+                            <div class="col-md-12 hover-text-one">
+                              <figure class="effect-text-four">
+                                <img src="/static/main/img/komm.jpg" alt=""/>
+                                  <figcaption>
+                                    <p>Описание первого блока</p>
+                                  </figcaption>
+                               </figure>
+                            </div>
+                            <div class="col-md-12 hover-text-one">
+                              <figure class="effect-text-four">
+                                <img src="/static/main/img/ASV.png" alt=""/>
+                                  <figcaption>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                  </figcaption>
+                               </figure>
+                            </div>
+                            <div class="col-md-12 hover-text-one">
+                              <figure class="effect-text-four">
+                                <img src="/static/main/img/ASV.png" alt=""/>
+                                  <figcaption>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                  </figcaption>
+                               </figure>
+                            </div>
+                            <div class="col-md-12 hover-text-one">
+                              <figure class="effect-text-four">
+                                <img src="/static/main/img/ASV.png" alt=""/>
+                                  <figcaption>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                  </figcaption>
+                               </figure>
+                            </div>
+                            <div class="hover-text-one">
+                              <figure class="effect-text-four">
+                                <img src="/static/main/img/street.jpg" alt=""/>
+                                  <figcaption>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                                  </figcaption>
+                               </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    {% endblock %}
+<!-- PORTFOLIO END-->
+                  <!--about-->
+    <!--<div class="page-footer__docs-contacts">-->
+    {% block about %}
+    <div class="page-footer__separator ninja--xs">
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="page-footer__separator-line">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brand-jumbotron">
+    <!--<div class="brand-jumbotron__bg">
+    </div>-->
+    <div class="brand-jumbotron__desc">
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="brand-jumbotron__desc-inner">
+                        <h2 class="brand-jumbotron__desc-title">О бренде</h2>
+                        <p class="brand-jumbotron__desc-text">
+                                Компания «АСВ-ЛЕД» – лидирующий производитель светильников и поставщик светотехнического
+                            <br class="ninja--xs"> оборудования на рынке РБ. Компания предлагает широкий ассортимент осветительной
+                            <br class="ninja--xs"> продукции для оснащения как жилых, так и производственных помещений.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block contacts %}
+<div class="page-footer__separator ninja--xs">
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="page-footer__separator-line">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!--contacts-->
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="brand-jumbotron__desc-inner"><a href="" name="contacts"></a>
+                    <h2 class="brand-jumbotron__desc-title">Контактные данные</h2>
+                    <p class="brand-jumbotron__desc-text">ООО «АСВ..»</p>
+                    <p class="brand-jumbotron__desc-text">г. Минск, ул.тарантайская, д. 1, стр. 6, ком.4</p>
+                    <p class="brand-jumbotron__desc-text">E-mail:
+                        <a class="link link--secondary" href="mailto:info@varton.ru">info@asv-led.by</a>
+                    </p>
+                    <p class="brand-jumbotron__desc-text">Коммерческий директор: Гайдук Владислав</p>
+                    <p class="brand-jumbotron__desc-text">Контактный номер:
+                        <a class="link link--secondary" href="tel:+74956498133">+375 (29) 450-99-99</a>
+                    </p>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+<script src="/static/main/js/slide.js" defer></script>
+</body>
+</html>
