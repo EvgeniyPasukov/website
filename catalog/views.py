@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.views.generic.list import ListView
 from .models import Catalog
 
 
-class TaskList(ListView):
-    model = Catalog
-    context_object_name = 'tasks'
+def catalog_list(request):
+    items = Catalog.objects.all()
+    return render(request, 'catalog/catalog_list.html', {'items': items})
+
+
+def details(request):
+    return render(request, 'catalog/details.html')

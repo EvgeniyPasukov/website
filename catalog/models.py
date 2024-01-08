@@ -12,7 +12,7 @@ class Catalog(models.Model):
     svet = models.CharField('Свет', max_length=50)
     srok = models.CharField('Срок службы', max_length=50)
     size = models.CharField('Габариты', max_length=100)
-    napruga = models.CharField('Напржение питания', max_length=100)
+    napruga = models.CharField('Напряжение питания', max_length=100)
     protection = models.CharField('Степень защиты', max_length=10)
     coef_puls = models.CharField('Коэффициент пульсации', max_length=10)
     garant = models.CharField('Гарантия', max_length=10)

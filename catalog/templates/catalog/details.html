@@ -3,11 +3,108 @@
 {% block title %}Подробнее{% endblock %}
 
 {% block body %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"/>
+
 <div class="page-footer__separator-line">
 </div>
 
-<h1>{{ object.power }}</h1>
-<h1>{{ movie.param }}</h1>
+<div class="container">
+  <div class="row details-block">
+    <div class="col-5">
+      <div class="f-carousel" id="myCarousel">
+        <div class="f-carousel__slide details-pictures" data-thumb-src="/static/main/img/komm.jpg">
+          <img  alt="" data-lazy-src="/static/main/img/komm.jpg" class="carousel-img"/>
+        </div>
+        <div class="f-carousel__slide details-pictures" data-thumb-src="/static/main/img/prom.jpg">
+          <img  alt="" data-lazy-src="/static/main/img/prom.jpg" class="carousel-img"/>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-7">
+      <div class="brand-jumbotron__desc-title details-header">ASV-ARM-20W-4K-D-IP-40-PT</div>
+      <div class="details-description">Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Animi ducimus eaque eum eveniet
+        explicabo id illum ipsum itaque laudantium magnam modi nesciunt nihil,
+        nostrum, quia sint soluta tempore ullam vitae?</div>
+        <br>
+      <div class="tech">Технические характеристики</div>
+      <div class="details-table">
+            <table class="table caption-top">
+              <tbody>
+                <tr>
+                  <th>Вид светильника</th>
+                  <td>Светодиодный</td>
+                </tr>
+                <tr>
+                  <th>Тип монтажа</th>
+                  <td>Накладной</td>
+                </tr>
+                <tr>
+                  <th>Максимальная мощность</th>
+                  <td>20 Вт</td>
+                </tr>
+                <tr>
+                  <th>Температура света</th>
+                  <td>4000 К</td>
+                </tr>
+                <tr>
+                  <th>Световой поток</th>
+                  <td>2400 Лм</td>
+                </tr>
+                <tr>
+                  <th>Цвет корпуса</th>
+                  <td>белый</td>
+                </tr>
+                <tr>
+                  <th>Свет</th>
+                  <td>Нейтральный белый, опал</td>
+                </tr>
+                <tr>
+                  <th>Срок службы</th>
+                  <td>50 000 часов</td>
+                </tr>
+                <tr>
+                  <th>Размер</th>
+                  <td>595х595х40</td>
+                </tr>
+                <tr>
+                  <th>Напряжение питания</th>
+                  <td>176-265В, 50 Гц</td>
+                </tr>
+                <tr>
+                  <th>Степень защиты</th>
+                  <td>IP40</td>
+                </tr>
+                <tr>
+                  <th>Коэфициент пульсации</th>
+                  <td><1%</td>
+                </tr>
+                <tr>
+                  <th>Гарантия</th>
+                  <td>5 лет</td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+  <script>
+    new Carousel(document.getElementById("myCarousel"), {
+      // Your custom options
+      Dots: false,
+      Thumbs: {
+        type: "classic",
+      },
+    }, { Thumbs });
+  </script>
 {% endblock %}
 
 {% block about %}{% endblock %}
