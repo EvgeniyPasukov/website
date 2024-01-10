@@ -79,7 +79,6 @@
     </div>
     <section class="product-section">
             <div class="grid-container">
-                <div class="grid-row">
                     <div class="col-md-12">
                         <h2 class="brand-jumbotron__desc-title">Продукция</h2>
                     </div>
@@ -127,143 +126,97 @@
                                     <div class="product-section__item-heading">Линейные светильники для внутреннего освещения</div>
                                 </a>
                             </div>
+                            {% for prod in prod_list %}
+                            <div  class="slider-products__slide">
+                                <a class="product-section__item" href="/products/lineynye-svetilniki-dlya-vnutrennego-osveshcheniya/">
+                                    <img src="{{ prod.picture.url }}" alt="" class="press__item-img">
+                                    <div class="product-section__item-heading">{{ prod.title }}</div>
+                                </a>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
-                </div>
             </div>
     </section>
+
                 <!-- PORTFOLIO -->
-<div class="page-footer__separator ninja--xs">
-    <div class="grid-container">
-        <div class="grid-row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="page-footer__separator-line">
-                </div>
-            </div>
+
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-footer__separator-line">
         </div>
     </div>
-</div>
-<section class="product-section">
-            <div class="grid-container-portfolio">
-                <div class="grid-row">
-                    <div class="col-md-12">
+    <section class="main-content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="brand-jumbotron__desc-inner">
                         <h2 class="brand-jumbotron__desc-title">Портфолио</h2>
                     </div>
-                    <div class="col-md-12">
-                        <div class="slider-products">
+                </div>
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="slider-products">
+                        {% for port in port_list %}
                             <div class="col-md-12 hover-text-one">
-                              <figure class="effect-text-four">
-                                <img src="/static/main/img/komm.jpg" alt=""/>
-                                  <figcaption>
-                                    <p>Описание первого блока</p>
-                                  </figcaption>
-                               </figure>
+                                <figure class="effect-text-four">
+                                    <img src="{{ port.picture.url }}" alt=""/>
+                                    <figcaption>
+                                        <p>{{ port.title }}</p>
+                                    </figcaption>
+                                </figure>
                             </div>
-                            <div class="col-md-12 hover-text-one">
-                              <figure class="effect-text-four">
-                                <img src="/static/main/img/ASV.png" alt=""/>
-                                  <figcaption>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                  </figcaption>
-                               </figure>
-                            </div>
-                            <div class="col-md-12 hover-text-one">
-                              <figure class="effect-text-four">
-                                <img src="/static/main/img/ASV.png" alt=""/>
-                                  <figcaption>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                  </figcaption>
-                               </figure>
-                            </div>
-                            <div class="col-md-12 hover-text-one">
-                              <figure class="effect-text-four">
-                                <img src="/static/main/img/ASV.png" alt=""/>
-                                  <figcaption>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                  </figcaption>
-                               </figure>
-                            </div>
-                            <div class="hover-text-one">
-                              <figure class="effect-text-four">
-                                <img src="/static/main/img/street.jpg" alt=""/>
-                                  <figcaption>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                  </figcaption>
-                               </figure>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+        </div>
     </section>
+    <br>
     {% endblock %}
 <!-- PORTFOLIO END-->
+
                   <!--about-->
-    <!--<div class="page-footer__docs-contacts">-->
-    {% block about %}
-    <div class="page-footer__separator ninja--xs">
-        <div class="grid-container">
-            <div class="grid-row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="page-footer__separator-line">
-                    </div>
-                </div>
-            </div>
+{% block about %}
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-footer__separator-line">
         </div>
     </div>
-    <div class="brand-jumbotron">
-    <!--<div class="brand-jumbotron__bg">
-    </div>-->
-    <div class="brand-jumbotron__desc">
-        <div class="grid-container">
-            <div class="grid-row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="brand-jumbotron__desc-inner">
-                        <h2 class="brand-jumbotron__desc-title">О бренде</h2>
-                        <p class="brand-jumbotron__desc-text">
-                                Компания «АСВ-ЛЕД» – лидирующий производитель светильников и поставщик светотехнического
-                            <br class="ninja--xs"> оборудования на рынке РБ. Компания предлагает широкий ассортимент осветительной
-                            <br class="ninja--xs"> продукции для оснащения как жилых, так и производственных помещений.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="brand-jumbotron__desc-inner">
+            <h2 class="brand-jumbotron__desc-title">О бренде</h2>
+            <p class="brand-jumbotron__desc-text">
+                Компания «АСВ-ЛЕД» – лидирующий производитель светильников и поставщик светотехнического
+                 оборудования на рынке РБ. Компания предлагает широкий ассортимент осветительной
+                 продукции для оснащения как жилых, так и производственных помещений.
+            </p>
         </div>
     </div>
-</div>
 {% endblock %}
+                <!--about END-->
+
+                <!--contacts-->
 {% block contacts %}
-<div class="page-footer__separator ninja--xs">
-    <div class="grid-container">
-        <div class="grid-row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="page-footer__separator-line">
-                </div>
-            </div>
+    <div class="col-md-6 col-md-offset-3">
+        <div class="page-footer__separator-line">
         </div>
     </div>
-</div>
-    <!--contacts-->
-    <div class="grid-container">
-        <div class="grid-row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="brand-jumbotron__desc-inner"><a href="" name="contacts"></a>
-                    <h2 class="brand-jumbotron__desc-title">Контактные данные</h2>
-                    <p class="brand-jumbotron__desc-text">ООО «АСВ..»</p>
-                    <p class="brand-jumbotron__desc-text">г. Минск, ул.тарантайская, д. 1, стр. 6, ком.4</p>
-                    <p class="brand-jumbotron__desc-text">E-mail:
-                        <a class="link link--secondary" href="mailto:info@varton.ru">info@asv-led.by</a>
-                    </p>
-                    <p class="brand-jumbotron__desc-text">Коммерческий директор: Гайдук Владислав</p>
-                    <p class="brand-jumbotron__desc-text">Контактный номер:
-                        <a class="link link--secondary" href="tel:+74956498133">+375 (29) 450-99-99</a>
-                    </p>
-                </div>
-                <br>
-            </div>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="brand-jumbotron__desc-inner"><a href="" name="contacts"></a>
+            <h2 class="brand-jumbotron__desc-title">Контактные данные</h2>
+            <p class="brand-jumbotron__desc-text">ООО «АСВ..»</p>
+            <p class="brand-jumbotron__desc-text">г. Минск, ул.тарантайская, д. 1, стр. 6, ком.4</p>
+            <p class="brand-jumbotron__desc-text">E-mail:
+                <a class="link link--secondary" href="mailto:info@varton.ru">info@asv-led.by</a>
+            </p>
+            <p class="brand-jumbotron__desc-text">Коммерческий директор: Гайдук Владислав</p>
+            <p class="brand-jumbotron__desc-text">Контактный номер:
+                <a class="link link--secondary" href="tel:+74956498133">+375 (29) 450-99-99</a>
+            </p>
         </div>
+        <br>
     </div>
-    {% endblock %}
+{% endblock %}
+                <!--contacts END-->
+
 <script src="/static/main/js/slide.js" defer></script>
 </body>
 </html>

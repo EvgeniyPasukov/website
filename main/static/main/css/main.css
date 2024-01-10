@@ -265,7 +265,6 @@ header {
     left: 0%;
     right: auto;
     animation: 2s show ease;
-    /*transform: translate(30px, 20px) rotate(20deg);*/
 }
 
 @keyframes show {
@@ -1314,7 +1313,6 @@ width: 30px;
 	width: 25%;
 	list-style: none;
 	text-align: center;
-    /*border: 1px solid black;*/
 }
 .hover-text-one figure {
     margin: 0;
