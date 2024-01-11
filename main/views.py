@@ -2,12 +2,15 @@ from django.core.mail import EmailMultiAlternatives
 from django.shortcuts import render
 from django.template.loader import get_template
 from .forms import ContactForm
-from django.views.generic.base import View
-from .models import Portfolio, Production
+from .models import Portfolio, Production, Slider
 
 
 def index(request):
-    return render(request, 'main/index.html')
+    port = Portfolio.objects.all()
+    prod = Production.objects.all()
+    slide = Slider.objects.all()
+
+    return render(request, 'main/index.html', {'port_list': port, 'prod_list': prod, 'slide_list': slide})
 
 
 def about(request):
@@ -53,19 +56,18 @@ def contacts(request):
     return render(request, 'main/contacts.html')
 
 
-class PortfolioView(View):
-    @staticmethod
-    def get(request):
-        port = Portfolio.objects.all()
-        return render(request, 'main/index.html', {'port_list': port})
+# class PortfolioView(View):
+#     @staticmethod
+#     def get(request):
+#         port = Portfolio.objects.all()
+#         return render(request, 'main/index.html', {'port_list': port})
+#
+#
+# class ProductionView(View):
+#     @staticmethod
+#     def get(request):
+#         prod = Production.objects.all()
+#         return render(request, 'main/index.html', {'prod_list': prod})
 
 
-class ProductionView(View):
-    @staticmethod
-    def get(request):
-        prod = Production.objects.all()
-        return render(request, 'main/index.html', {'prod_list': prod})
 
-
-class ShowMainView(PortfolioView, ProductionView):
-    template_name = 'main/index.html'

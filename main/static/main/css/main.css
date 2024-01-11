@@ -272,6 +272,12 @@ header {
   to { opacity: 1; }
 }
 
+.slider-a{
+    text-decoration: none;
+    color: gray;
+    cursor: pointer;
+}
+
 h1 {
     width: 100%;
     text-align: center;
@@ -295,7 +301,7 @@ h2 {
 
 .btn{
     display: block;
-    /*width: 30%;*/
+    width: 30%;
     border: none;
     outline: none;
     text-transform: uppercase;
