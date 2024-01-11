@@ -18,7 +18,7 @@ def about(request):
 
 
 def catalog(request):
-    return render(request, 'catalog/catalog_list.html')
+    return render(request, 'catalog/catalog.html')
 
 
 def portfolio(request):

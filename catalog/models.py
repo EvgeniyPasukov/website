@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Catalog(models.Model):
@@ -21,6 +22,9 @@ class Catalog(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('details', kwargs={'slug': self.url})
 
     class Meta:
         verbose_name = 'товар'

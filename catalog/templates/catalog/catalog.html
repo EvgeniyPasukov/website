@@ -11,8 +11,6 @@
 <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />-->
 
 
-        <div class="page-footer__separator-line">
-        </div>
         <div class="container container-prod">
             <div class="">
                 <div class="col-md-3">
@@ -140,23 +138,21 @@
         <div class="col-md-9">
             <div class="row ">
                 <!--loop-->
-                {% if items %}
-                {% for el in items %}
+                {% if item_list %}
+                {% for el in item_list %}
                 <div class="product-card">
                     <div class="product-thumb">
-                        <a href="#"><img src="{{ el.image }}" alt=""></a>
+                        <a href="#"><img src="{{ el.image.url }}" alt=""></a>
                     </div>
                     <div class="product-details">
-                        <h4><a href="#">{{ el.name }}</a></h4>
                         <div class="product-bottom-details d-flex justify-content-center">
-                            <div class="product-links">
-                            </div>
+                            <h4><a href="{{ el.get_absolute_url }}">{{ el.name }}</a></h4>
                         </div>
                     </div>
                 </div>
                 {% endfor %}
                 {% else %}
-                    pusto
+                    товары отсутствуют
                 {% endif %}
                 <!--endloop-->
             </div>
@@ -397,13 +393,3 @@
                         </div>
                 </div>
         </div>-->
-
-
-
-<!--{% if item %}
-            {% for el in item %}
-                <h3>{{ el.param }}</h3>
-            {% endfor %}
-        {% else %}
-            <p>pusto</p>
-        {% endif %}-->
