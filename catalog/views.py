@@ -1,21 +1,18 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from django.views.generic.base import View
 
 from .models import Catalog
 
 
-# def catalog_list(request):
-#     items = Catalog.objects.all()
-#     return render(request, 'catalog/catalog.html', {'item_list': items})
+class CatalogView(ListView):
+    model = Catalog
+    queryset = Catalog.objects.all()
+    template_name = 'catalog/catalog.html'
+    context_object_name = 'item_list'
 
 
-class CatalogView(View):
-    def get(self, request):
-        items = Catalog.objects.all()
-        return render(request, 'catalog/catalog.html', {'item_list': items})
-
-
-class CatalogDetailView(View):
-    def get(self, request, slug):
-        detail = Catalog.objects.get(url=slug)
-        return render(request, 'catalog/details.html', {'detail': detail})
+class CatalogDetailView(DetailView):
+    model = Catalog
+    slug_field = 'url'
+    context_object_name = 'detail'
