@@ -15,3 +15,4 @@ class PortfolioAdmin(admin.ModelAdmin):
 @admin.register(Slider)
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ('title', 'description')
+

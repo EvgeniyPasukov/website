@@ -10,22 +10,18 @@
   <div class="row details-block">
     <div class="col-5">
       <div class="f-carousel" id="myCarousel">
-        <div class="f-carousel__slide details-pictures" data-thumb-src="/static/main/img/komm.jpg">
-          <img  alt="" data-lazy-src="/static/main/img/komm.jpg" class="carousel-img"/>
+        {% for image in detail.catalogimages_set.all %}
+        <div class="f-carousel__slide details-pictures" data-thumb-src="{{ image.image.url }}">
+          <img  alt="" data-lazy-src="{{ image.image.url }}" class="carousel-img"/>
         </div>
-        <div class="f-carousel__slide details-pictures" data-thumb-src="/static/main/img/prom.jpg">
-          <img  alt="" data-lazy-src="/static/main/img/prom.jpg" class="carousel-img"/>
-        </div>
+        {% endfor %}
       </div>
     </div>
 
 
     <div class="col-7">
       <div class="brand-jumbotron__desc-title details-header">{{ detail.name }}</div>
-      <div class="details-description">Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit. Animi ducimus eaque eum eveniet
-        explicabo id illum ipsum itaque laudantium magnam modi nesciunt nihil,
-        nostrum, quia sint soluta tempore ullam vitae?</div>
+      <div class="details-description">{{ detail.description }}</div>
         <br>
       <div class="tech">Технические характеристики</div>
       <div class="details-table">
