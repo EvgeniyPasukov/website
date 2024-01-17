@@ -28,52 +28,65 @@
             <table class="table caption-top">
               <tbody>
                 <tr>
-                  <th>Вид светильника</th>
-                  <td>{{ detail.vid_sv }}</td>
+                  <th>Категория</th>
+                  <td>{{ detail.category }}</td>
                 </tr>
                 <tr>
-                  <th>Тип монтажа</th>
-                  <td>{{ detail.tip_mon }}</td>
+                <tr>
+                  <th>Тип лампы</th>
+                  <td>{{ detail.lamp_type }}</td>
                 </tr>
                 <tr>
-                  <th>Максимальная мощность</th>
+                  <th>Тип рассеивателя</th>
+                  <td>{{ detail.rass_type }}</td>
+                </tr>
+                <tr>
+                  <th>Мощность</th>
                   <td>{{ detail.max_power }}</td>
-                </tr>
-                <tr>
-                  <th>Температура света</th>
-                  <td>{{ detail.temp_sveta }}</td>
                 </tr>
                 <tr>
                   <th>Световой поток</th>
                   <td>{{ detail.svet_potok }}</td>
                 </tr>
                 <tr>
-                  <th>Цвет корпуса</th>
-                  <td>{{ detail.color }}</td>
+                  <th>Цветовая температура</th>
+                  <td>{{ detail.temp_sveta }}</td>
                 </tr>
                 <tr>
-                  <th>Свет</th>
-                  <td>{{ detail.svet }}</td>
-                </tr>
-                <tr>
-                  <th>Срок службы</th>
-                  <td>{{ detail.srok }}</td>
-                </tr>
-                <tr>
-                  <th>Размер</th>
-                  <td>{{ detail.size }}</td>
-                </tr>
-                <tr>
-                  <th>Напряжение питания</th>
+                  <th>Номинальное напряжение</th>
                   <td>{{ detail.napruga }}</td>
+                </tr>
+                <tr>
+                  <th>Номинальная частота</th>
+                  <td>{{ detail.herz }}</td>
+                </tr>
+                <tr>
+                  <th>Коэффициент мощности</th>
+                  <td>{{ detail.koef_power }}</td>
+                </tr>
+                <tr>
+                  <th>Коэффициент цветопередачи</th>
+                  <td>{{ detail.koef_ra }}</td>
                 </tr>
                 <tr>
                   <th>Степень защиты</th>
                   <td>{{ detail.protection }}</td>
                 </tr>
                 <tr>
-                  <th>Коэфициент пульсации</th>
+                  <th>Коэффициент пульсации</th>
                   <td>{{ detail.coef_puls }}</td>
+                </tr>
+                <tr>
+                  <th>Допустимая температура эксплуатации</th>
+                  <td>{{ detail.usage_temp }}</td>
+                </tr>
+                <tr>
+                  <th>Габариты</th>
+                  <td>{{ detail.size }}</td>
+                </tr>
+                <tr>
+                  <th>Тип монтажа</th>
+                  <td>{{ detail.tip_mon }}</td>
                 </tr>
                 <tr>
                   <th>Гарантия</th>
