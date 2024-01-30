@@ -1,5 +1,4 @@
-from django.db.models import Q
-from django.shortcuts import render
+from django.db.models import Q, F
 from django.views.generic import ListView, DetailView
 from .models import Catalog, Category as CatModel, Power as PowModel, Kelvin as KelModel, Protection as ProModel
 
@@ -10,16 +9,13 @@ class Category:
         return CatModel.objects.all()
 
     def get_kelvin(self):
-        return Catalog.objects.all().values('temp_sveta')
+        return KelModel.objects.all()
 
     def get_protection(self):
         return ProModel.objects.all()
 
-
-class Power:
-    '''мощность товаров'''
-    def get_power(self):
-        return PowModel.objects.all()
+    def get_power(request):
+        return Catalog.objects.all().values('power')
 
 
 class CatalogView(Category, ListView):
@@ -35,11 +31,14 @@ class CatalogDetailView(DetailView):
     context_object_name = 'detail'
 
 
-class FilterYearCategory(Category, ListView):
+class Filters(Category, ListView):
     template_name = 'catalog/catalog.html'
     context_object_name = 'item_list'
 
-    def get_queryset(self):
+    def get_queryset(self, *args, **kwargs):
+        min_power = self.request.GET.get('min_power')
+        max_power = self.request.GET.get('max_power')
+
         my_q = Q()
         if 'category' in self.request.GET:
             my_q = Q(category__in=self.request.GET.getlist('category'))
@@ -47,7 +46,23 @@ class FilterYearCategory(Category, ListView):
             my_q &= Q(temp_sveta__in=self.request.GET.getlist('temp_sveta'))
         if 'protection' in self.request.GET:
             my_q &= Q(protection__in=self.request.GET.getlist('protection'))
+        if min_power:
+            my_q &= Q(power__gte=int(min_power))
+        if max_power:
+            my_q &= Q(power__lte=int(max_power))
 
         queryset = Catalog.objects.filter(my_q)
         return queryset
 
+
+class Filt(Filters):
+    def get_queryset(self, *args, **kwargs):
+        min_power = self.request.GET.get('min_power')
+        max_power = self.request.GET.get('max_power')
+        queryset = Catalog.objects.all()
+
+        if min_power:
+            queryset = queryset.filter(power__gte=int(min_power))
+        if max_power:
+            queryset = queryset.filter(power__lte=int(max_power))
+        return queryset

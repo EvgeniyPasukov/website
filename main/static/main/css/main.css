@@ -301,7 +301,7 @@ h2 {
 
 .btn{
     display: block;
-    width: 30%;
+    /*width: 30%;*/
     border: none;
     outline: none;
     text-transform: uppercase;
@@ -900,15 +900,6 @@ align-items: center;
 .footer-subscribe .form-row input {
 }
 
-.footer-subscribe .form-row .btn {
-margin: 0 0 0 10px;
-padding: 0 10px;
-width: auto;
-}
-
-.footer-subscribe .form-row .btn svg {
-width: 30px;
-}*/
 
 .brand-jumbotron {
   height: 186px;

@@ -3,8 +3,7 @@
 {% block title %}Светорасчет{% endblock %}
 
 {% block body %}
-<div class="page-footer__separator-line">
-</div>
+
 <form action="" method="post" novalidate="novalidate">
   {% csrf_token %}
   {% if success %}
@@ -53,7 +52,7 @@
               </div>
               {% endif %}
 
-          <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn--first" type="submit" formnovalidate>Отправить</button>
           </div>
           </div>

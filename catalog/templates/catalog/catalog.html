@@ -4,6 +4,8 @@
 
 {% block body %}
 <script src="/static/main/js/slider-power.js" defer></script>
+<script src="/static/main/js/scripts.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
@@ -15,8 +17,7 @@
             <div class="">
                 <div class="col-md-3">
                     <div class="filters-menu">
-                        <form action="{% url 'filter' %}" method="get">
-
+                        <form action="{% url 'filter' %}" method="get" name="filter">
                             <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
                                         <span>Категория</span>
@@ -29,20 +30,18 @@
                                     {% endfor %}
                                 </div>
                             </div>
-
                             <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
                                         <span>Цветовая температура, К</span>
                                 </div>
                                 <div class="filters-menu-content">
-                                    {% for item_list in view.get_kelvin %}
-                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ item_list.temp_sveta }}">
-                                            <span>{{ item_list.temp_sveta }}</span>
+                                    {% for kelvin in view.get_kelvin %}
+                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.id }}">
+                                            <span>{{ kelvin.name }}</span>
                                         <br>
                                     {% endfor %}
                                 </div>
                             </div>
-
                             <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
                                         <span>Степень защиты</span>
@@ -56,51 +55,18 @@
                                 </div>
                             </div>
 
-                        <button type="submit">найти</button>
-                        </form>
-
-
-
-                        <div class="filters-menu-block">
+                            <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
-                                        <span>Мощность, Вт</span>
+                                        <span>Мощность</span>
                                 </div>
                                 <div class="filters-menu-content">
-                                    <div id="slider-outer-div-power">
-                                        <div class="col-md-2 form-label">от</div>
-                                        <div id="slider-max-label" class="form-control input-sm disabled col-md-4"></div>
-                                        <div class="col-md-2 form-label">до</div>
-                                        <div id="slider-min-label" class="form-control input-sm disabled col-md-4"></div>
-                                        {% block slider %}
-                                            <div id="slider-div">
-                                                        <div class="form-group form-group-range col-md-12">
-                                                            <label for="ex2">
-                                                                <input type="text"  id="ex2" data-slider-min="10"
-                                                                data-slider-max="1500" data-slider-step="10" data-slider-value="[10,1500]"
-                                                                data-slider-tooltip="hide" class="form-control input-sm disabled" disabled="" >
-                                                            </label>
-                                                        </div>
-                                            </div>
-                                        {% endblock %}
-                                    </div>
+
                                 </div>
-                        </div>
-
-
-
-
-<!--                        <div class="filters-menu-block">-->
-<!--                            <div class="filters-menu-heading">-->
-<!--                                    <span>Степень защиты</span>-->
-<!--                            </div>-->
-<!--                            <div class="filters-menu-content">-->
-<!--                                {% for protection in view.get_protection %}-->
-<!--                                    <input type="checkbox" class="" name="category" value="{{ protection.protection }}">-->
-<!--                                        <span>{{ protection.name }}</span>-->
-<!--                                    <br>-->
-<!--                                {% endfor %}-->
-<!--                            </div>-->
-<!--                        </div>-->
+                            </div>
+                            <input type="number" name="min_power" placeholder="от">
+                            <input type="number" name="max_power" placeholder="до">
+                        <button type="submit">найти</button>
+                        </form>
                     </div>
         </div>
 
@@ -120,7 +86,7 @@
                 </div>
                 {% endfor %}
                 {% else %}
-                    товары отсутствуют
+                    Товары отсутствуют
                 {% endif %}
             </div>
         </div>
@@ -129,10 +95,14 @@
 {% endblock %}
 
 
-<!--{% for power in view.get_power %}-->
-<!--    <input type="checkbox" class="" name="category" value="{{ power.max_power }}">-->
-<!--        <span>{{ power.name }}</span>-->
-<!--    <br>-->
-<!--{% endfor %}-->
-
-<!--name="category" value="{{ kelvin.temp_sveta }}-->
+<!--                                        {% block slider %}-->
+<!--                                            <div id="slider-div">-->
+<!--                                                <div class="form-group form-group-range col-md-12">-->
+<!--                                                    <label for="ex2">-->
+<!--                                                        <input type="text"  id="ex2" data-slider-min="10"-->
+<!--                                                        data-slider-max="1000" data-slider-step="10" data-slider-value="[10,1000]"-->
+<!--                                                        data-slider-tooltip="hide" class="form-control input-sm disabled" disabled="" >-->
+<!--                                                    </label>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        {% endblock %}-->

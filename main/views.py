@@ -54,20 +54,3 @@ def send_message(name, email, phone):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
-
-
-# class PortfolioView(View):
-#     @staticmethod
-#     def get(request):
-#         port = Portfolio.objects.all()
-#         return render(request, 'main/index.html', {'port_list': port})
-#
-#
-# class ProductionView(View):
-#     @staticmethod
-#     def get(request):
-#         prod = Production.objects.all()
-#         return render(request, 'main/index.html', {'prod_list': prod})
-
-
-

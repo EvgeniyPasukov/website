@@ -27,11 +27,11 @@ class Power(models.Model):
 
 
 class Kelvin(models.Model):
-    name = models.PositiveSmallIntegerField('Цветовая температура, К', default=0)
+    name = models.CharField('Цветовая температура, К', max_length=150)
     url = models.SlugField(max_length=160, unique=True)
 
     def __str__(self):
-        return self.name
+        return self.url
 
     class Meta:
         verbose_name = 'Цветовая температура'
@@ -54,9 +54,9 @@ class Catalog(models.Model):
     name = models.CharField('Название', max_length=50)
     lamp_type = models.CharField('Тип ламп', max_length=50, default='')
     rass_type = models.CharField('Тип рассеивателя', max_length=30, default='')
-    max_power = models.ForeignKey(Power, verbose_name='Мощность, Вт', on_delete=models.SET_NULL, null=True)
+    power = models.PositiveSmallIntegerField('Мощность, Вт', default=1)
     svet_potok = models.CharField('Световой поток, Лм', max_length=20)
-    temp_sveta = models.PositiveSmallIntegerField('Цветовая температура, К', default=0)
+    temp_sveta = models.ForeignKey(Kelvin, verbose_name='Цветовая температура, К', on_delete=models.SET_NULL, null=True,)
     napruga = models.CharField('Номинальное напряжение, В', max_length=100)
     herz = models.CharField('Номинальная частота, Гц', max_length=100, default='')
     koef_power = models.CharField('Коэффициент мощности', max_length=100, default='')
