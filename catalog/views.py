@@ -1,10 +1,10 @@
-from django.db.models import Q, F
+from django.db.models import Q
 from django.views.generic import ListView, DetailView
 from .models import Catalog, Category as CatModel, Power as PowModel, Kelvin as KelModel, Protection as ProModel
 
 
 class Category:
-    '''категории товаров'''
+
     def get_category(self):
         return CatModel.objects.all()
 
@@ -13,9 +13,6 @@ class Category:
 
     def get_protection(self):
         return ProModel.objects.all()
-
-    def get_power(request):
-        return Catalog.objects.all().values('power')
 
 
 class CatalogView(Category, ListView):
@@ -41,28 +38,15 @@ class Filters(Category, ListView):
 
         my_q = Q()
         if 'category' in self.request.GET:
-            my_q = Q(category__in=self.request.GET.getlist('category'))
+            my_q = Q(category__url__in=self.request.GET.getlist('category'))
         if 'temp_sveta' in self.request.GET:
-            my_q &= Q(temp_sveta__in=self.request.GET.getlist('temp_sveta'))
+            my_q &= Q(temp_sveta__url__in=self.request.GET.getlist('temp_sveta'))
         if 'protection' in self.request.GET:
-            my_q &= Q(protection__in=self.request.GET.getlist('protection'))
+            my_q &= Q(protection__url__in=self.request.GET.getlist('protection'))
         if min_power:
             my_q &= Q(power__gte=int(min_power))
         if max_power:
             my_q &= Q(power__lte=int(max_power))
 
         queryset = Catalog.objects.filter(my_q)
-        return queryset
-
-
-class Filt(Filters):
-    def get_queryset(self, *args, **kwargs):
-        min_power = self.request.GET.get('min_power')
-        max_power = self.request.GET.get('max_power')
-        queryset = Catalog.objects.all()
-
-        if min_power:
-            queryset = queryset.filter(power__gte=int(min_power))
-        if max_power:
-            queryset = queryset.filter(power__lte=int(max_power))
         return queryset

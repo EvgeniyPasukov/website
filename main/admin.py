@@ -1,13 +1,8 @@
 from django.contrib import admin
-from .models import Portfolio, Production, Slider
+from .models import Portfolio, Slider
 
 
 @admin.register(Portfolio)
-class PortfolioAdmin(admin.ModelAdmin):
-    list_display = ('title', 'picture')
-
-
-@admin.register(Production)
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ('title', 'picture')
 

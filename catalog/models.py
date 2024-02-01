@@ -5,6 +5,7 @@ from django.urls import reverse
 class Category(models.Model):
     name = models.CharField('Категория', max_length=150)
     url = models.SlugField(max_length=160, unique=True)
+    image = models.ImageField('Картинка', upload_to='img', null=True, blank=True)
 
     def __str__(self):
         return self.name

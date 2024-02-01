@@ -71,18 +71,11 @@
             </div>
             <div class="col-md-12">
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
-                    <div class="slider-products__slide">
-                        <a class="product-section__item" href="/">
-                            <img src="/static/main/img/komm.jpg" alt="" class="press__item-img">
-                            <div class="product-section__item-heading">Офисное освещение</div>
-                        </a>
-                    </div>
-
                     {% for prod in prod_list %}
                     <div  class="slider-products__slide">
-                        <a class="product-section__item" href="/products/lineynye-svetilniki-dlya-vnutrennego-osveshcheniya/">
-                            <img src="{{ prod.picture.url }}" alt="" class="press__item-img">
-                            <div class="product-section__item-heading">{{ prod.title }}</div>
+                        <a class="product-section__item" href="/catalog/filter/?category={{ prod.url }}">
+                            <img src="{{ prod.image.url }}" alt="" class="press__item-img">
+                            <div class="product-section__item-heading">{{ prod.name }}</div>
                         </a>
                     </div>
                     {% endfor %}

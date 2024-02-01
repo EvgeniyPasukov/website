@@ -323,7 +323,7 @@ h2 {
     transition: background-color .45s, color .35s
     background-color: transparent;
     margin: 0 auto;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 
 .btn:hover {
@@ -1589,6 +1589,15 @@ figure.effect-text-four:hover p {
 
 .filters-menu-content{
 
+}
+
+.input-group>.form-control, .input-group>.form-floating, .input-group>.form-select{
+    position: initial;
+}
+
+
+.form-control::-webkit-inner-spin-button {
+  display: none;
 }
 
 .filters-menu-content label{

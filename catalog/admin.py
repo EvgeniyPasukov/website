@@ -38,19 +38,19 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Power)
 class PowerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('name', 'url', 'id')
     prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(Kelvin)
 class KelvinAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('name', 'url', 'id')
     prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(Protection)
 class ProtectionAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url')
+    list_display = ('name', 'url', 'id')
     prepopulated_fields = {'url': ('name',)}
 
 
