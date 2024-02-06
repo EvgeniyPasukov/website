@@ -16,14 +16,14 @@
             <div class="">
                 <div class="col-md-3">
                     <div class="filters-menu">
-                        <form action="{% url 'filter' %}" method="get" name="filter">
+                        <form action="{% url 'filter' %}" method="get" name="filter" id="filter-form">
                             <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
                                         <span>Категория</span>
                                 </div>
                                 <div class="filters-menu-content">
                                     {% for category in view.get_category %}
-                                        <input type="checkbox" class="checked" name="category" value="{{ category.url }}">
+                                        <input type="checkbox" class="checked" name="category" value="{{ category.url }}" id="category">
                                             <span>{{ category.name }}</span>
                                         <br>
                                     {% endfor %}
@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="filters-menu-content">
                                     {% for kelvin in view.get_kelvin %}
-                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}">
+                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}" id="kelvin">
                                             <span>{{ kelvin.name }}</span>
                                         <br>
                                     {% endfor %}
@@ -47,7 +47,7 @@
                                 </div>
                                 <div class="filters-menu-content">
                                     {% for protection in view.get_protection %}
-                                        <input type="checkbox" class="checked" name="protection" value="{{ protection.url }}">
+                                        <input type="checkbox" class="checked" name="protection" value="{{ protection.url }}" id="protection">
                                             <span>{{ protection.name }}</span>
                                         <br>
                                     {% endfor %}
@@ -59,8 +59,8 @@
                                         <span>Мощность, Вт</span>
                                 </div>
                                 <div class="input-group">
-                                        <input type="number" class="form-control" name="min_power" placeholder="От" min="1">
-                                        <input type="number" class="form-control" name="max_power" placeholder="До" max="9999">
+                                        <input type="number" class="form-control" name="min_power" placeholder="От" min="1" id="min_power">
+                                        <input type="number" class="form-control" name="max_power" placeholder="До" max="9999" id="max_power">
                                 </div>
                             </div>
                         <button type="submit" class="btn btn--first">Найти</button>
@@ -89,4 +89,21 @@
         </div>
   </div>
 </div>
+<script type="text/javascript">
+    $(document).on('submit', '#filter-form', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'GET',
+            url: '/update',
+            data: {
+                category: $('#category').val(),
+                kelvin: $('#kelvin').val(),
+                protection: $('#protection').val(),
+                min_power: $('#min_power').val(),
+                max_power: $('#max_power').val(),
+            },
+            success: function (data)
+        })
+    })
+</script>
 {% endblock %}
