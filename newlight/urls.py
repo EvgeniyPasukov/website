@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin-asv-led/', admin.site.urls),
     path('', include('main.urls')),
     path('catalog/', include('catalog.urls')),
+    path('portfolio/', include('portfolio.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

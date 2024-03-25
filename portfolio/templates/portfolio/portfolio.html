@@ -1,0 +1,33 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% block title %}Портфолио{% endblock %}
+
+{% block body %}
+<div class="container">
+<!--    <div class="row">-->
+        <div class="col-md-4 col-md-offset-4">
+            <div class="brand-jumbotron__desc-inner">
+                <h2 class="brand-jumbotron__desc-title">Наши работы</h2>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="slider-products">
+                {% for port in item_list %}
+                    <div class="col-md-12 hover-text-one minimized">
+                        <figure class="effect-text-four">
+                            <a href="{{ port.get_absolute_url }}">
+                                <img src="{{ port.picture.url }}" class="" alt=""/>
+                                <figcaption>
+                                    <p>{{ port.title }}</p>
+                                </figcaption>
+                            </a>
+                        </figure>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}
+

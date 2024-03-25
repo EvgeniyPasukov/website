@@ -51,11 +51,11 @@ class Filters(Category, ListView):
         queryset = Catalog.objects.filter(my_q)
         return queryset
 
-
-def update(request):
-    if request.method == 'GET':
-        category = request.GET['category']
-        kelvin = request.GET['kelvin']
-        protection = request.GET['protection']
-        min_power = request.GET['min_power']
-        max_power = request.GET['max_power']
+#
+# def update(request):
+#     if request.method == 'GET':
+#         category = request.GET['category']
+#         kelvin = request.GET['kelvin']
+#         protection = request.GET['protection']
+#         min_power = request.GET['min_power']
+#         max_power = request.GET['max_power']

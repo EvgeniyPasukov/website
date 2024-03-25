@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'main',
     'catalog',
+    'portfolio',
     'rest_framework',
     'django_filters',
     'django.contrib.admin',
@@ -124,7 +125,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-
 STATICFILES_DIRS = [BASE_DIR / 'main/static']
 
 # Default primary key field type
@@ -152,3 +152,8 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    from .prod_settings import *

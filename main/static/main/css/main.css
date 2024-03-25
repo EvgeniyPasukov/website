@@ -1748,11 +1748,11 @@ padding-left: 10px;
     position: relative;
 }
 
-.details-pictures{
+/*.details-pictures{
     position: relative;
     height: 600px;
     border: 1px solid #e8e8e8;
-}
+}*/
 
 #myCarousel {
     max-width: 640px;
@@ -1766,14 +1766,22 @@ padding-left: 10px;
 }
 
 .carousel-img{
-    width: 100%;
-    height: 100%;
+    /*размер картинок в подробно*/
+    max-width: 500px;
+    height: 600px;
 }
 
 .details-header{
     display: flex;
     justify-content: center;
     margin-bottom: 25px;
+}
+
+.details-header_port{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+    font-size: 40px;
 }
 
 .details-description{

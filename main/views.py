@@ -2,20 +2,18 @@ from django.core.mail import EmailMultiAlternatives
 from django.shortcuts import render
 from django.template.loader import get_template
 from .forms import ContactForm
-from .models import Portfolio, Slider
+from .models import Slider
 from catalog.models import Category
 
 
 def index(request):
-    port = Portfolio.objects.all()
     prod = Category.objects.all()
     slide = Slider.objects.all()
 
-    return render(request, 'main/index.html', {'port_list': port, 'slide_list': slide, 'prod_list': prod})
-
-
-def about(request):
-    return render(request, 'main/about.html')
+    return render(request, 'main/index.html', {
+        'slide_list': slide,
+        'prod_list': prod
+    })
 
 
 def catalog(request):
@@ -52,6 +50,3 @@ def send_message(name, email, phone):
     msg.attach_alternative(html_content, 'text/html')
     msg.send()
 
-
-def contacts(request):
-    return render(request, 'main/contacts.html')

@@ -1,0 +1,46 @@
+{% extends 'main/index.html' %}
+{% load static %}
+{% block title %}Портфолио{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.css"/>
+
+<div class="container text-center">
+    <div class="col-12">
+      <div class="p-3 details-header_port">{{ detail.title }}</div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row details-block">
+    <div class="col-12">
+      <div class="f-carousel" id="myCarousel">
+        {% for image in detail.portfolioimages_set.all %}
+        <div class="f-carousel__slide details-pictures" data-thumb-src="{{ image.image.url }}">
+          <img  alt="" data-lazy-src="{{ image.image.url }}" class="carousel-img"/>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-7">
+
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/carousel/carousel.thumbs.umd.js"></script>
+  <script>
+    new Carousel(document.getElementById("myCarousel"), {
+      // Your custom options
+      Dots: false,
+      Thumbs: {
+        type: "classic",
+      },
+    }, { Thumbs });
+  </script>
+{% endblock %}
+
+{% block about %}{% endblock %}
