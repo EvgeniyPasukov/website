@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+     <link rel="stylesheet" href="{% static 'main/css/adaptive.css' %}">
 
     <script src="/static/main/js/bigpicture.js"></script>
 
@@ -49,7 +50,7 @@
     </div>
     {% endblock %}
 {% block body %}
-    <div class="itc-slider" data-autoplay="true" data-interval="4000" data-loop="true" data-refresh="true" data-slider="itc-slider">
+    <div class="itc-slider" data-autoplay="false" data-interval="4000" data-loop="true" data-refresh="true" data-slider="itc-slider">
         <div class="itc-slider-wrapper">
             <div class="itc-slider-items">
 <!--                <div class="itc-slider-item">-->

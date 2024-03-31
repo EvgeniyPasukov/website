@@ -3,7 +3,6 @@ html{
 }
 
 body {
-    background: white;
     margin: 0;
     padding: 0;
 }
@@ -14,9 +13,10 @@ body {
 
 header {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap:wrap;
     align-items: center;
+    max-width:2000px;
 }
 
 .menu {
@@ -73,6 +73,7 @@ header {
     line-height: 24px;
     margin-right: 20px;
     margin-left: 40px;
+    width:340px;
 }
 
 .tel a {
@@ -241,13 +242,14 @@ header {
 
 .slide-pref{
     /*min-height:550px;*/
-    max-height: 750px;
-    min-width: 100%;
+    max-height: 600px;
+    width: 100%;
     background-position: 50% 0;
     background-size: cover;
     background-attachment: scroll;
     border-radius: 0;
     transition: opacity .2s;
+    object-fit:none;
 }
 
 .shadow{
@@ -294,7 +296,6 @@ h1 {
 h2 {
     color: gray;
     text-align: center;
-    margin-top: 20px;
     font-size: 20px;
     line-height: 44px;
 }
@@ -762,6 +763,7 @@ h2 {
   justify-content: center;
   width: 100%;
   height: 100%;
+  object-fit:cover;
 }
 
 .press__item-heading {
@@ -1827,6 +1829,7 @@ tr:nth-child(even) {
 }
 
 
+
 /* slider production
 .slider {
   -webkit-appearance: none;
@@ -1857,7 +1860,6 @@ tr:nth-child(even) {
   background: #04AA6D;
   cursor: pointer;
 }*/
-
 
 
 

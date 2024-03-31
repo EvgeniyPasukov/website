@@ -1,0 +1,24 @@
+@media (max-width: 1180px) {
+    .slider-products--latent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 940px) {
+    header{
+        flex-direction: column;
+    }
+    .itc-slider-item{
+        height:450px;
+    }
+    .slide-pref {
+        height:100%;
+        object-fit:cover;
+    }
+    .product-section {
+        padding-top:10px;
+    }
+}
+
