@@ -1,5 +1,8 @@
+
+
+
 .button_menu {
-    display:flex;
+    display:none;
     position: absolute;
     right: 20px;
     top: 15px;
@@ -60,6 +63,9 @@
 @media (max-width:650px) {
     header {
         flex-direction: row;
+    }
+    .button_menu{
+        display:flex;
     }
 }
 
