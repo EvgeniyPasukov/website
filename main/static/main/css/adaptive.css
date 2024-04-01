@@ -1,3 +1,36 @@
+.button_menu {
+    display:flex;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor:pointer;
+    height:40px;
+}
+
+.button_menu_item {
+    background-color: red;
+    height: 2px;
+    width: 40px;
+}
+
+.button_menu_item::before {
+    content:'';
+    background-color: red;
+    height: 2px;
+    width: 40px;
+    position: absolute;
+    top: 19px;
+}
+
+.button_menu_item::after {
+    content:'';
+    background-color: red;
+    height: 2px;
+    width: 40px;
+    position: absolute;
+    top: 9px;
+}
+
 @media (max-width: 1180px) {
     .slider-products--latent{
         display: flex;
@@ -7,8 +40,10 @@
 }
 
 @media (max-width: 940px) {
+
     header{
         flex-direction: column;
+        margin-bottom: 10px;
     }
     .itc-slider-item{
         height:450px;
@@ -19,6 +54,12 @@
     }
     .product-section {
         padding-top:10px;
+    }
+}
+
+@media (max-width:650px) {
+    header {
+        flex-direction: row;
     }
 }
 
