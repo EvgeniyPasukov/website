@@ -23,15 +23,6 @@ header {
   flex-grow: 1;
 }
 
-.menu ul {
-  display: flex;
-  justify-content: center;
-  flex-flow: row nowrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .menu li + li {
   margin-left: 20px;
 }
@@ -47,6 +38,7 @@ header {
 
 .menu ul {
   display: flex;
+  justify-content: center;
   flex-flow: row nowrap;
   margin: 2px 0 0;
   padding: 0;
@@ -1860,3 +1852,4 @@ tr:nth-child(even) {
   background: #04AA6D;
   cursor: pointer;
 }*/
+

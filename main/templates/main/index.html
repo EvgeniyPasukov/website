@@ -27,12 +27,13 @@
            <a href="{% url 'home' %}"><img src="/static/main/img/ASV-LED.png" width="220" height="60" alt="homeBTN"></a>
        </div>
        <nav class="menu">
-           <ul>
+           <ul class="menu_navigation">
                 <li><a href="{% url 'home' %}">Главная</a></li>
                 <li><a href="{% url 'catalog' %}">Продукция</a></li>
                 <li><a href="{% url 'portfolio' %}">Портфолио</a></li>
                 <li><a href="{% url 'calc' %}">Светорасчет</a></li>
                 <li><a href="#contacts">Контакты</a></li>
+               <div class="button_close"><div class="button_close_item"></div></div>
            </ul>
        </nav>
        <div class="tel">
@@ -141,5 +142,6 @@
 {% endblock %}
 
 <script src="/static/main/js/slide.js" defer></script>
+<script src="/static/main/js/adaptiveMenu.js" defer></script>
 </body>
 </html>
