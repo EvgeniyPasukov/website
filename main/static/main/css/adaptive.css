@@ -69,6 +69,24 @@
     transform: rotate(90deg);
 }
 
+.scroll {
+    overflow: hidden;
+}
+
+.burger_bg{
+    position: fixed;
+    z-index: 1;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(41, 41, 41, 0.6);
+    cursor: pointer;
+}
+
+.is-burger-bg {
+    width: 100vw;
+}
+
 @media (max-width: 1180px) {
     .slider-products--latent{
         display: flex;
@@ -119,14 +137,12 @@
     .menu li {
         margin-left:0px!important;
         width:80%;
-
     }
     .menu li a {
         text-align:center;
     }
     .button_close{
-    display:flex;
+        display:flex;
         transition: display 0.8s;
-
     }
 }
