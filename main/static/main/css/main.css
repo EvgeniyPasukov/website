@@ -1570,9 +1570,10 @@ figure.effect-text-four:hover p {
     display: grid;
     border: 1px solid rgba(212, 212, 212, 0.75);
     height: 100%;
-    margin-right: 25px;
+    margin-right: 15px;
     margin-bottom: 40px;
     padding: 10px;
+    width:250px;
 }
 
 .filters-menu-heading{
@@ -1656,7 +1657,7 @@ padding-left: 10px;
 
 
 .product-card{
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: 0 1px 3px 0 #764a47;
     transition: all .3s;
     position: relative;
     box-sizing: border-box;
@@ -1664,6 +1665,7 @@ padding-left: 10px;
     vertical-align: top;
     margin-left: 15px;
     margin-bottom: 15px;
+    border-radius: 10px;
     /*position: inline-block;*/
     /*display: table-cell;*/
 }
@@ -1677,13 +1679,14 @@ padding-left: 10px;
     align-items: center;
     justify-content: center;
     height: 270px;
-    padding: 20px;
+    padding-top: 10px;
     padding-top:none;
 }
 
 .product-thumb img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-details{
@@ -1693,7 +1696,7 @@ padding-left: 10px;
 .product-details h4 a{
     font-weight: 500;
     display: block;
-    height: 60px; /*скрывать полное название если текст длинный*/
+    height: auto; /*скрывать полное название если текст длинный*/
     overflow: hidden;
     text-decoration: none;
     font-size: 20px;

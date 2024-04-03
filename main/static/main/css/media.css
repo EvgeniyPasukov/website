@@ -1,3 +1,9 @@
+@media (max-width: 1250px) {
+    .main-content-product {
+        justify-content: center!important;
+    }
+}
+
 @media (max-width: 1180px) {
     .slider-products--latent{
         display: flex;
@@ -21,6 +27,12 @@
     }
     .product-section {
         padding-top:10px;
+    }
+}
+
+@media (max-width:900px) {
+    .col-md-9 {
+        width: 63%;
     }
 }
 
@@ -55,6 +67,19 @@
     .button_close{
         display:flex;
         transition: display 0.8s;
+    }
+}
+
+@media (max-width: 580px) {
+    .main-content {
+        align-items: center;
+        flex-direction: column;
+    }
+    .filters-menu {
+        width:100%;
+    }
+    .product-card {
+        width:100%;
     }
 }
 
