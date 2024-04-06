@@ -66,6 +66,20 @@ header {
     margin-right: 20px;
     margin-left: 40px;
     width:340px;
+    display:flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.tel_mail,
+.tel_contact  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tel_link {
+    margin-left:5px;
 }
 
 .tel a {
