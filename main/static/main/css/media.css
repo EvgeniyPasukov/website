@@ -15,6 +15,9 @@
     .main-content-product {
         justify-content: center!important;
     }
+    .col-6 {
+        width:62%;
+    }
 }
 
 @media (max-width: 1180px) {
@@ -42,6 +45,17 @@
     }
     .product-section {
         padding-top:10px;
+    }
+    .form_label_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .col-form-label {
+        display: flex;
+        justify-content: start;
+        width: 83.33333333%;
     }
 }
 
@@ -73,7 +87,7 @@
         transition: transform 0.5s;
     }
     .menu li {
-        margin-left:0px!important;
+        margin-left:0px;
         width:80%;
     }
     .menu li a {
@@ -98,6 +112,12 @@
     }
     .tel {
         display:none;
+    }
+    .col-form-label {
+        width:100%;
+    }
+    .col-6 {
+        width:80%;
     }
 }
 

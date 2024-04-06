@@ -1,0 +1,10 @@
+.calc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.offset-3 {
+    margin-left:0px!important;
+}
