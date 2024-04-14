@@ -1,0 +1,128 @@
+@media (max-width: 1350px) {
+    header {
+        flex-wrap:nowrap;
+    }
+    .tel {
+        flex-direction:column;
+        margin-left:0px;
+    }
+    .logo {
+        margin-right:20px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .main-content-product {
+        justify-content: center!important;
+    }
+    .col-6 {
+        width:62%;
+    }
+}
+
+@media (max-width: 1180px) {
+    .slider-products--latent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1090px) {
+    header {
+        flex-direction:column;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 940px) {
+    .itc-slider-item{
+        height:450px;
+    }
+    .slide-pref {
+        height:100%;
+        object-fit:cover;
+    }
+    .product-section {
+        padding-top:10px;
+    }
+    .form_label_block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .col-form-label {
+        display: flex;
+        justify-content: start;
+        width: 83.33333333%;
+    }
+}
+
+@media (max-width:900px) {
+    .col-md-9 {
+        width: 63%;
+    }
+}
+
+@media (max-width:650px) {
+    header {
+        flex-direction: row;
+    }
+    .button_menu{
+        opacity:1;
+    }
+    .menu_navigation {
+        flex-direction: column!important;
+        transform: translateX(100%);
+        width: 320px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        z-index: 2;
+        background: black;
+        align-items: center;
+        margin-top:0px!important;
+        transition: transform 0.5s;
+    }
+    .menu li {
+        margin-left:0px;
+        width:80%;
+    }
+    .menu li a {
+        text-align:center;
+    }
+    .button_close{
+        display:flex;
+        transition: display 0.8s;
+    }
+}
+
+@media (max-width: 580px) {
+    .main-content {
+        align-items: center;
+        flex-direction: column;
+    }
+    .filters-menu {
+        width:100%;
+    }
+    .product-card {
+        width:100%;
+    }
+    .tel {
+        display:none;
+    }
+    .col-form-label {
+        width:100%;
+    }
+    .col-6 {
+        width:80%;
+    }
+}
+
+@media (max-width: 450px) {
+    .tel {
+        display:none;
+    }
+}
