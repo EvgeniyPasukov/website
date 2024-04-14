@@ -1,6 +1,7 @@
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
-from .models import Catalog, Category as CatModel, Power as PowModel, Kelvin as KelModel, Protection as ProModel
+from .models import Catalog, Category as CatModel, Power as PowModel, Protection as ProModel
+#Kelvin as KelModel
 
 
 class Category:
@@ -8,8 +9,8 @@ class Category:
     def get_category(self):
         return CatModel.objects.all()
 
-    def get_kelvin(self):
-        return KelModel.objects.all()
+    # def get_kelvin(self):
+    #     return KelModel.objects.all()
 
     def get_protection(self):
         return ProModel.objects.all()
@@ -39,8 +40,8 @@ class Filters(Category, ListView):
         my_q = Q()
         if 'category' in self.request.GET:
             my_q = Q(category__url__in=self.request.GET.getlist('category'))
-        if 'temp_sveta' in self.request.GET:
-            my_q &= Q(temp_sveta__url__in=self.request.GET.getlist('temp_sveta'))
+        # if 'temp_sveta' in self.request.GET:
+        #     my_q &= Q(temp_sveta__url__in=self.request.GET.getlist('temp_sveta'))
         if 'protection' in self.request.GET:
             my_q &= Q(protection__url__in=self.request.GET.getlist('protection'))
         if min_power:
@@ -50,12 +51,3 @@ class Filters(Category, ListView):
 
         queryset = Catalog.objects.filter(my_q)
         return queryset
-
-#
-# def update(request):
-#     if request.method == 'GET':
-#         category = request.GET['category']
-#         kelvin = request.GET['kelvin']
-#         protection = request.GET['protection']
-#         min_power = request.GET['min_power']
-#         max_power = request.GET['max_power']
