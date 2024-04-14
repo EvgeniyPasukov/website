@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import Catalog, Category, CatalogImages, Power, Kelvin, Protection
+from .models import Catalog, Category, CatalogImages, Power, Protection
 
 #
 # @admin.register(CatalogImages)
@@ -42,10 +42,10 @@ class PowerAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('name',)}
 
 
-@admin.register(Kelvin)
-class KelvinAdmin(admin.ModelAdmin):
-    list_display = ('name', 'url', 'id')
-    prepopulated_fields = {'url': ('name',)}
+# @admin.register(Kelvin)
+# class KelvinAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'url', 'id')
+#     prepopulated_fields = {'url': ('name',)}
 
 
 @admin.register(Protection)
