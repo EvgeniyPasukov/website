@@ -27,16 +27,16 @@ class Power(models.Model):
         verbose_name_plural = 'Мощность'
 
 
-# class Kelvin(models.Model):
-#     name = models.CharField('Цветовая температура, К', max_length=150)
-#     url = models.SlugField(max_length=160, unique=True)
-#
-#     def __str__(self):
-#         return self.url
-#
-#     class Meta:
-#         verbose_name = 'Цветовая температура'
-#         verbose_name_plural = 'Цветовые температуры'
+class Kelvin(models.Model):
+    name = models.CharField('Цветовая температура, К', max_length=150)
+    url = models.SlugField(max_length=160, unique=True)
+
+    def __str__(self):
+        return self.url
+
+    class Meta:
+        verbose_name = 'Цветовая температура'
+        verbose_name_plural = 'Цветовые температуры'
 
 
 class Protection(models.Model):
@@ -57,7 +57,7 @@ class Catalog(models.Model):
     rass_type = models.CharField('Тип рассеивателя', max_length=30, default='')
     power = models.PositiveSmallIntegerField('Мощность, Вт', default=1)
     svet_potok = models.CharField('Световой поток, Лм', max_length=20)
-    #temp_sveta = models.ForeignKey(Kelvin, verbose_name='Цветовая температура, К', on_delete=models.SET_NULL, null=True,)
+    temp_sveta = models.ForeignKey(Kelvin, verbose_name='Цветовая температура, К', on_delete=models.SET_NULL, null=True,)
     napruga = models.CharField('Номинальное напряжение, В', max_length=100)
     herz = models.CharField('Номинальная частота, Гц', max_length=100, default='')
     koef_power = models.CharField('Коэффициент мощности', max_length=100, default='')
