@@ -112,7 +112,7 @@
         transition: transform 0.5s;
     }
     .menu li {
-        margin-left:0px;
+        margin-left:0px!important;
         width:80%;
     }
     .menu li a {
