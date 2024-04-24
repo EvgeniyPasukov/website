@@ -76,8 +76,8 @@
                 <div class="itc-slider-item">
                     <img src="{{ slide.picture.url }}" alt="" class="slide-pref">
                       <div class="shadow">
-                          <h1>{{ slide.title }}</h1>
-                          <h2>{{ slide.description }}</h2>
+                          <h1 class="shadow-title">{{ slide.title }}</h1>
+                          <h2 class="shadow-description">{{ slide.description }}</h2>
                           {% if slide.url %}
                           <a href="{{ slide.url }}" class="slider-a"><button class="btn btn--first" >{{ slide.button }}</button></a>
                           {% endif %}
