@@ -29,18 +29,18 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="filters-menu-block">
-                                <div class="filters-menu-heading">
-                                        <span>Цветовая температура, К</span>
-                                </div>
-                                <div class="filters-menu-content">
-                                    {% for kelvin in view.get_kelvin %}
-                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}" id="kelvin">
-                                            <span>{{ kelvin.name }}</span>
-                                        <br>
-                                    {% endfor %}
-                                </div>
-                            </div>
+<!--                            <div class="filters-menu-block">-->
+<!--                                <div class="filters-menu-heading">-->
+<!--                                        <span>Цветовая температура, К</span>-->
+<!--                                </div>-->
+<!--                                <div class="filters-menu-content">-->
+<!--                                    {% for kelvin in view.get_kelvin %}-->
+<!--                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}" id="kelvin">-->
+<!--                                            <span>{{ kelvin.name }}</span>-->
+<!--                                        <br>-->
+<!--                                    {% endfor %}-->
+<!--                                </div>-->
+<!--                            </div>-->
                             <div class="filters-menu-block">
                                 <div class="filters-menu-heading">
                                         <span>Степень защиты</span>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import Catalog, Category, CatalogImages, Power, Kelvin, Protection
+from .models import Catalog, Category, CatalogImages, Power, Protection, Kelvin
 
 #
 # @admin.register(CatalogImages)
