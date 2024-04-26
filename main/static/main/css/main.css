@@ -1775,6 +1775,7 @@ padding-left: 10px;
 #myCarousel {
     max-width: 640px;
     margin: 0 auto;
+    display:flex;
 }
 
 #myCarousel .f-carousel__slide {
@@ -1785,8 +1786,8 @@ padding-left: 10px;
 
 .carousel-img{
     /*размер картинок в подробно*/
-    max-width: 500px;
-    height: 600px;
+    width: 100%;
+    max-height: 600px;
 }
 
 .details-header{

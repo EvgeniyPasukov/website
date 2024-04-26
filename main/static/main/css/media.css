@@ -45,6 +45,11 @@
     }
 }
 
+@media (max-width:1000px) {
+    .container {
+        max-width:900px;
+    }
+}
 @media (max-width: 940px) {
     .itc-slider-item{
         height:450px;
@@ -73,6 +78,12 @@
     .col-md-9 {
         width: 63%;
     }
+    .container-description {
+        width:100%;
+    }
+    .container-slider{
+        width:100%;
+    }
 }
 
 @media (max-width:780px) {
@@ -84,8 +95,11 @@
     }
     }
 }
+
 @media (max-width:650px) {
+
 }
+
 @media (max-width:650px) {
     header {
         flex-direction: row;
