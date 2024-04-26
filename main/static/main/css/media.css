@@ -84,7 +84,8 @@
     }
     }
 }
-
+@media (max-width:650px) {
+}
 @media (max-width:650px) {
     header {
         flex-direction: row;
