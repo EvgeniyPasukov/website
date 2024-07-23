@@ -27,9 +27,14 @@
               <tbody>
                 <tr>
                   <th>Категория</th>
-                  <td>{{ detail.category }}</td>
+                  <td>{{ detail.subcategory.category.name }}</td>
                 </tr>
+
                 <tr>
+                  <th>Подкатегория</th>
+                  <td>{{ detail.subcategory.name }}</td>
+                </tr>
+
                 <tr>
                   <th>Тип лампы</th>
                   <td>{{ detail.lamp_type }}</td>

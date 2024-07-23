@@ -1,18 +1,60 @@
+import mptt
+import self as self
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 
 class Category(models.Model):
-    name = models.CharField('Категория', max_length=150)
-    url = models.SlugField(max_length=160, unique=True)
+    name = models.CharField('Категория', max_length=150, default='name')
+    slug = models.SlugField(max_length=160, unique=True)
     image = models.ImageField('Картинка', upload_to='img', null=True, blank=True)
+
+    class Meta:
+        verbose_name_plural = 'Категории'
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('category_detail', kwargs={'slug': self.slug})
+
+    # def __str__(self):
+    #     full_path = [self.name]
+    #     k = self.parent
+    #     while k is not None:
+    #         full_path.append(k.name)
+    #         k = k.parent
+    #
+    #     return ' -> '.join(full_path[::-1])
+
+
+class SubCategory(models.Model):
+    name = models.CharField('Подкатегория', max_length=150, default=True)
+    description = models.TextField('Описание', default='описание')
+    slug = models.SlugField(max_length=160, unique=True)
+    image = models.ImageField('Картинка', upload_to='img', null=True, blank=True)
+    category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        verbose_name = 'Подкатегория'
+        verbose_name_plural = 'Подкатегории'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('subcategory_detail', kwargs={'slug': self.slug})
 
 
 class Power(models.Model):
@@ -68,16 +110,24 @@ class Catalog(models.Model):
     size = models.CharField('Габариты', max_length=100)
     tip_mon = models.CharField('Тип монтажа', max_length=30)
     garant = models.CharField('Гарантия', max_length=10)
-    image = models.ImageField('Картинка', upload_to='img', null=True, blank=True)
+    image = models.ImageField('Картинка', upload_to='img')
     description = models.TextField('Описание', blank=True, null=True)
-    category = models.ForeignKey(Category, verbose_name="Категория", on_delete=models.SET_NULL, null=True,)
-    url = models.SlugField(unique=True, blank=True, null=True, db_index=True,)
+    subcategory = models.ForeignKey(SubCategory, related_name='products', on_delete=models.CASCADE)
+    slug = models.SlugField(unique=True, blank=True, null=True, db_index=True,)
 
     def __str__(self):
         return self.name
 
+    # def get_absolute_url(self):
+    #     return reverse('details', kwargs={'slug': self.url})
+
+    def save(self, *args, **kwargs):
+        if not self.slug:  # Генерация slug, если он не задан
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
     def get_absolute_url(self):
-        return reverse('details', kwargs={'slug': self.url})
+        return reverse('product_detail', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Товар'
