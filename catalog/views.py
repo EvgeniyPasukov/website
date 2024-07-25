@@ -9,26 +9,31 @@ class CategoryListView(ListView):
     model = Category
     template_name = 'catalog/category_list.html'
     context_object_name = 'categories'
+    slug_field = 'slug'
+    slug_url_kwarg = 'category_slug'
 
 
 class SubCategoryListView(ListView):
     model = SubCategory
     template_name = 'catalog/subcategory_list.html'
     context_object_name = 'subcategories'
+    slug_field = 'slug'
+    slug_url_kwarg = 'category_slug'
 
     def get_queryset(self):
-        # Получаем подкатегории по переданному id категории
-        return SubCategory.objects.filter(category_id=self.kwargs['category_id'])
+        # Получаем подкатегории по slug категории
+        category_slug = self.kwargs['category_slug']
+        return SubCategory.objects.filter(category__slug=category_slug)
 
     def get_context_data(self, **kwargs):
         # Добавляем категорию в контекст
         context = super().get_context_data(**kwargs)
-        context['category'] = Category.objects.get(id=self.kwargs['category_id'])
+        category_slug = self.kwargs['category_slug']
+        try:
+            context['category'] = Category.objects.get(slug=category_slug)
+        except Category.DoesNotExist:
+            context['category'] = None  # Или перенаправление на 404 страницу
         return context
-
-    # def get_queryset(self):
-    #     self.category = get_object_or_404(Category, name=self.kwargs['category'])
-    #     return SubCategory.objects.filter(category=self.category)
 
 
 class ProductListView(ListView):

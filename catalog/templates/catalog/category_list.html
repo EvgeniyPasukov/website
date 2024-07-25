@@ -20,7 +20,7 @@
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
                     {% for category in categories %}
                         <div  class="slider-products__slide">
-                            <a class="product-section__item" href="{% url 'subcategory_list' category.id %}">
+                            <a class="product-section__item" href="{{ category.get_absolute_url }}">
                                 <img src="{{ category.image.url }}" alt="" class="press__item-img">
                                 <div class="product-section__item-heading">{{ category.name }}</div>
                             </a>

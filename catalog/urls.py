@@ -3,16 +3,17 @@ from . import views
 from .views import CategoryListView, SubCategoryListView, ProductListView, ProductDetailView
 
 urlpatterns = [
-    path('categories/', CategoryListView.as_view(), name='category_list'),
-    path('categories/<int:category_id>/subcategories/', SubCategoryListView.as_view(), name='subcategory_list'),
+    path('', CategoryListView.as_view(), name='category_list'),
+    path('<slug:category_slug>/subcategories/', SubCategoryListView.as_view(), name='subcategory_list'),
     path('subcategories/<int:subcategory_id>/products/', ProductListView.as_view(), name='product_list'),
     path('products/<slug:slug>/', ProductDetailView.as_view(), name='product_detail'),  # Изменили на slug
 
-    # rabochij variant
-    # path('', views.CategoryListView.as_view(), name='category_list'),
-    # path('<str:category>/', views.SubCategoryListView.as_view(), name='subcategory_list'),
-    # path('<str:category>/<str:subcategory>/', views.CatalogBySubCategories.as_view(), name='product_list'),
-    # end
+    # path('', CategoryListView.as_view(), name='category_list'),
+    # path('<slug:slug>/', SubCategoryListView.as_view(), name='subcategory_list'),
+    # path('<slug:category_slug>/<slug:slug>/', ProductListView.as_view(), name='product_list'),
+    # path('<slug:category_slug>/<slug:subcategory_slug>/<slug:slug>/', ProductDetailView.as_view(), name='product_detail'),  # Изменили на slug
+
+
 
 
     # path('', views.CatalogView.as_view(), name='catalog'),

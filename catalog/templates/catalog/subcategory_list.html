@@ -19,14 +19,6 @@
             </div>
             <div class="col-md-12">
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
-<!--                    {% for sub in subcategory %}-->
-<!--                    <div  class="slider-products__slide">-->
-<!--                        <a class="product-section__item" href="/catalog/category/{{ sub.url }}">-->
-<!--                            <img src="{{ sub.image.url }}" alt="" class="press__item-img">-->
-<!--                            <div class="product-section__item-heading">{{ sub.name }} {{ sub.category.name }}</div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    {% endfor %}-->
 
                     {% for subcategory in subcategories %}
                         <div  class="slider-products__slide">
@@ -36,7 +28,6 @@
                             </a>
                         </div>
                     {% endfor %}
-
 
                 </div>
             </div>

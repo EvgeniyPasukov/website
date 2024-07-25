@@ -22,16 +22,7 @@ class Category(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('category_detail', kwargs={'slug': self.slug})
-
-    # def __str__(self):
-    #     full_path = [self.name]
-    #     k = self.parent
-    #     while k is not None:
-    #         full_path.append(k.name)
-    #         k = k.parent
-    #
-    #     return ' -> '.join(full_path[::-1])
+        return reverse('subcategory_list', kwargs={'category_slug': self.slug})
 
 
 class SubCategory(models.Model):
@@ -54,7 +45,7 @@ class SubCategory(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('subcategory_detail', kwargs={'slug': self.slug})
+        return reverse('product_list', kwargs={'category_slug': self.category.slug, 'subcategory_slug': self.slug})
 
 
 class Power(models.Model):
