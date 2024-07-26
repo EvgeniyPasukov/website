@@ -40,15 +40,25 @@ class ProductListView(ListView):
     model = Catalog
     template_name = 'catalog/product_list.html'
     context_object_name = 'products'
+    slug_url_kwarg = 'subcategory_slug'
 
     def get_queryset(self):
-        # Получаем товары, связанные с подкатегорией
-        return Catalog.objects.filter(subcategory_id=self.kwargs['subcategory_id'])
+        # Получаем товары по slug подкатегории
+        subcategory_slug = self.kwargs['subcategory_slug']
+        return Catalog.objects.filter(subcategory__slug=subcategory_slug)
 
     def get_context_data(self, **kwargs):
+        # Добавляем подкатегорию и категорию в контекст
         context = super().get_context_data(**kwargs)
-        # Добавляем информацию о подкатегории в контекст
-        context['subcategory'] = SubCategory.objects.get(id=self.kwargs['subcategory_id'])
+        subcategory_slug = self.kwargs['subcategory_slug']
+
+        try:
+            context['subcategory'] = SubCategory.objects.get(slug=subcategory_slug)
+            context['category'] = context['subcategory'].category
+        except SubCategory.DoesNotExist:
+            context['subcategory'] = None  # Или перенаправление на 404 страницу
+            context['category'] = None
+
         return context
 
 
@@ -57,7 +67,7 @@ class ProductDetailView(DetailView):
     template_name = 'catalog/product_detail.html'
     context_object_name = 'detail'
     slug_field = 'slug'  # Поле slug для поиска
-    slug_url_kwarg = 'slug'  # Имя slug в URL
+    slug_url_kwarg = 'product_slug'  # Имя slug в URL
 
 
 

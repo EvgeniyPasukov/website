@@ -4,9 +4,9 @@ from .views import CategoryListView, SubCategoryListView, ProductListView, Produ
 
 urlpatterns = [
     path('', CategoryListView.as_view(), name='category_list'),
-    path('<slug:category_slug>/subcategories/', SubCategoryListView.as_view(), name='subcategory_list'),
-    path('subcategories/<int:subcategory_id>/products/', ProductListView.as_view(), name='product_list'),
-    path('products/<slug:slug>/', ProductDetailView.as_view(), name='product_detail'),  # Изменили на slug
+    path('<slug:category_slug>/', SubCategoryListView.as_view(), name='subcategory_list'),
+    path('<slug:category_slug>/<slug:subcategory_slug>/', ProductListView.as_view(), name='product_list'),
+    path('<slug:category_slug>/<slug:subcategory_slug>/<slug:product_slug>/', ProductDetailView.as_view(), name='product_detail'),
 
     # path('', CategoryListView.as_view(), name='category_list'),
     # path('<slug:slug>/', SubCategoryListView.as_view(), name='subcategory_list'),

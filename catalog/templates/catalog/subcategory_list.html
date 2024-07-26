@@ -22,7 +22,7 @@
 
                     {% for subcategory in subcategories %}
                         <div  class="slider-products__slide">
-                            <a class="product-section__item" href="{% url 'product_list' subcategory.id %}">
+                            <a class="product-section__item" href="{{ subcategory.get_absolute_url }}">
                                 <img src="{{ subcategory.image.url }}" alt="" class="press__item-img">
                                 <div class="product-section__item-heading">{{ subcategory.name }}</div>
                             </a>

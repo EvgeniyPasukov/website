@@ -45,7 +45,8 @@ class SubCategory(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('product_list', kwargs={'category_slug': self.category.slug, 'subcategory_slug': self.slug})
+        return reverse('product_list', kwargs={'category_slug': self.category.slug,
+                                               'subcategory_slug': self.slug})
 
 
 class Power(models.Model):
@@ -118,7 +119,9 @@ class Catalog(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('product_detail', kwargs={'slug': self.slug})
+        return reverse('product_detail', kwargs={'category_slug': self.subcategory.category.slug,
+                                                 'subcategory_slug': self.subcategory.slug,
+                                                 'product_slug': self.slug})
 
     class Meta:
         verbose_name = 'Товар'
