@@ -771,6 +771,17 @@ h2 {
   height: 100%;
   object-fit:cover;
 }
+.press__item-img-small {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  justify-content: center;
+  width: 100px;
+  margin-left: 35%;
+  height: 100px;
+  object-fit:cover;
+}
 
 .press__item-heading {
   display: block;
@@ -935,6 +946,15 @@ align-items: center;
   line-height: 40px;
   font-weight: normal;
   letter-spacing: .05em;
+  font-family: 'GoodPro-Medium', 'PT Sans', Arial, Helvetica, sans-serif;
+}
+.brand-jumbotron__desc-description {
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: normal;
+  letter-spacing: .04em;
+  color: black;
+  margin: 10 200 10;
   font-family: 'GoodPro-Medium', 'PT Sans', Arial, Helvetica, sans-serif;
 }
 .brand-jumbotron__desc-text {

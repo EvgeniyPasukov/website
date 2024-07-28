@@ -1,5 +1,3 @@
-import mptt
-import self as self
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -8,6 +6,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     name = models.CharField('Категория', max_length=150, default='name')
     slug = models.SlugField(max_length=160, unique=True)
+    description = models.TextField('описание', default='описание')
     image = models.ImageField('Картинка', upload_to='img', null=True, blank=True)
 
     class Meta:
@@ -110,11 +109,9 @@ class Catalog(models.Model):
     def __str__(self):
         return self.name
 
-    # def get_absolute_url(self):
-    #     return reverse('details', kwargs={'slug': self.url})
 
     def save(self, *args, **kwargs):
-        if not self.slug:  # Генерация slug, если он не задан
+        if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
