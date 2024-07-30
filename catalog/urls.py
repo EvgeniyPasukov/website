@@ -8,12 +8,6 @@ urlpatterns = [
     path('<slug:category_slug>/<slug:subcategory_slug>/', ProductListView.as_view(), name='product_list'),
     path('<slug:category_slug>/<slug:subcategory_slug>/<slug:product_slug>/', ProductDetailView.as_view(), name='product_detail'),
 
-    # path('', CategoryListView.as_view(), name='category_list'),
-    # path('<slug:slug>/', SubCategoryListView.as_view(), name='subcategory_list'),
-    # path('<slug:category_slug>/<slug:slug>/', ProductListView.as_view(), name='product_list'),
-    # path('<slug:category_slug>/<slug:subcategory_slug>/<slug:slug>/', ProductDetailView.as_view(), name='product_detail'),  # Изменили на slug
-
-
 
 
     # path('', views.CatalogView.as_view(), name='catalog'),

@@ -42,11 +42,11 @@ def send_message(name, email, phone):
     html = get_template('main/message.html')
     context = {'name': name, 'email': email, 'phone': phone}
     subject = 'сообщение от пользователя'
-    from_email = 'ASV-LED@yandex.by'
+    from_email = 'pasukov.e@yandex.ru'
     text_content = text.render(context)
     html_content = html.render(context)
 
-    msg = EmailMultiAlternatives(subject, text_content, from_email, ['ASV-LED@yandex.by'])
+    msg = EmailMultiAlternatives(subject, text_content, from_email, ['pasukov.e@yandex.ru'])
     msg.attach_alternative(html_content, 'text/html')
     msg.send()
 

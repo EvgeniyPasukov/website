@@ -1,7 +1,14 @@
 from django.db.models import Q
+from django.http import JsonResponse
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import get_template
+from django.core.mail import send_mail
+from django.conf import settings
+
+
 from .models import Catalog, Category, Power as PowModel, Protection as ProModel, SubCategory
 
 
@@ -69,6 +76,36 @@ class ProductDetailView(DetailView):
     slug_field = 'slug'  # Поле slug для поиска
     slug_url_kwarg = 'product_slug'  # Имя slug в URL
 
+    def post(self, request, *args, **kwargs):
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        url = request.POST.get('url')
+
+        # Формируем сообщение
+        subject = 'Запрос цены на светильник'
+        message = (
+            f'Имя: {name}.\n\n'
+            f'email: {email}.\n\n'
+            f'Телефон: {phone}.\n\n'
+            f'Светильник: {url}\n\n'
+        )
+        from_email = settings.DEFAULT_FROM_EMAIL
+        recipient_list = ['pasukov.e@yandex.ru']
+
+        try:
+            send_mail(
+                subject,
+                message,
+                from_email,
+                recipient_list,
+                fail_silently=False # Если True, ошибки не будут выводиться
+            )
+            return JsonResponse({'message': 'Ваш запрос отправлен! Мы свяжемся с вами.'})
+        except Exception as e:
+            # Если произошла ошибка при отправке
+            return JsonResponse({'error': f'Не удалось отправить запрос: {str(e)}'}, status=500)
+
 
 
 # class Category:
@@ -76,8 +113,8 @@ class ProductDetailView(DetailView):
 #     def get_category(self):
 #         return CatModel.objects.all()
 #
-#     # def get_kelvin(self):
-#     #     return KelModel.objects.all()
+#     def get_kelvin(self):
+#         return KelModel.objects.all()
 #
 #     def get_protection(self):
 #         return ProModel.objects.all()
