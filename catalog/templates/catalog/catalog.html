@@ -12,6 +12,29 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
 
 
+<section class="product-section">
+        <div class="grid-container">
+            <div class="col-md-12">
+                <h2 class="brand-jumbotron__desc-title">old Продукция</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
+                    {% for prod in prod_list %}
+                    <div  class="slider-products__slide">
+                        <a class="product-section__item" href="/catalog/filter/?category={{ prod.url }}">
+                            <img src="{{ prod.image.url }}" alt="" class="press__item-img">
+                            <div class="product-section__item-heading">{{ prod.name }}</div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
         <div class=" container-prod container-main">
             <div class="main-content">
                 <div class="col-md-3">
@@ -29,64 +52,71 @@
                                     {% endfor %}
                                 </div>
                             </div>
-                            <div class="filters-menu-block">
-                                <div class="filters-menu-heading">
-                                        <span>Цветовая температура, К</span>
-                                </div>
-                                <div class="filters-menu-content">
-                                    {% for kelvin in view.get_kelvin %}
-                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}" id="kelvin">
-                                            <span>{{ kelvin.name }}</span>
-                                        <br>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div class="filters-menu-block">
-                                <div class="filters-menu-heading">
-                                        <span>Степень защиты</span>
-                                </div>
-                                <div class="filters-menu-content">
-                                    {% for protection in view.get_protection %}
-                                        <input type="checkbox" class="checked" name="protection" value="{{ protection.url }}" id="protection">
-                                            <span>{{ protection.name }}</span>
-                                        <br>
-                                    {% endfor %}
-                                </div>
-                            </div>
 
-                            <div class="filters-menu-block">
-                                <div class="filters-menu-heading">
-                                        <span>Мощность, Вт</span>
-                                </div>
-                                <div class="input-group">
-                                        <input type="number" class="form-control" name="min_power" placeholder="От" min="1" id="min_power">
-                                        <input type="number" class="form-control" name="max_power" placeholder="До" max="9999" id="max_power">
-                                </div>
-                            </div>
-                        <button type="submit" class="btn btn--first">Найти</button>
-                        </form>
-                    </div>
-        </div>
-        <div class="col-md-9">
-            <div class="row main-content-product">
-                {% if item_list %}
-                {% for el in item_list %}
-                <div class="product-card">
-                    <div class="product-thumb">
-                        <a href="{{ el.get_absolute_url }}"><img src="{{ el.image.url }}" alt=""></a>
-                    </div>
-                    <div class="product-details">
-                        <div class="product-bottom-details d-flex justify-content-center">
-                            <h4><a href="{{ el.get_absolute_url }}">{{ el.name }}</a></h4>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-                {% else %}
-                    Товары отсутствуют
-                {% endif %}
-            </div>
-        </div>
+
+<!--                            NOT USED-->
+<!--                            <div class="filters-menu-block">-->
+<!--                                <div class="filters-menu-heading">-->
+<!--                                        <span>Цветовая температура, К</span>-->
+<!--                                </div>-->
+<!--                                <div class="filters-menu-content">-->
+<!--                                    {% for kelvin in view.get_kelvin %}-->
+<!--                                        <input type="checkbox" class="checked" name="temp_sveta" value="{{ kelvin.url }}" id="kelvin">-->
+<!--                                            <span>{{ kelvin.name }}</span>-->
+<!--                                        <br>-->
+<!--                                    {% endfor %}-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            NOT USED END                            -->
+
+
+<!--                            -->
+<!--                            <div class="filters-menu-block">-->
+<!--                                <div class="filters-menu-heading">-->
+<!--                                        <span>Степень защиты</span>-->
+<!--                                </div>-->
+<!--                                <div class="filters-menu-content">-->
+<!--                                    {% for protection in view.get_protection %}-->
+<!--                                        <input type="checkbox" class="checked" name="protection" value="{{ protection.url }}" id="protection">-->
+<!--                                            <span>{{ protection.name }}</span>-->
+<!--                                        <br>-->
+<!--                                    {% endfor %}-->
+<!--                                </div>-->
+<!--                            </div>-->
+
+<!--                            <div class="filters-menu-block">-->
+<!--                                <div class="filters-menu-heading">-->
+<!--                                        <span>Мощность, Вт</span>-->
+<!--                                </div>-->
+<!--                                <div class="input-group">-->
+<!--                                        <input type="number" class="form-control" name="min_power" placeholder="От" min="1" id="min_power">-->
+<!--                                        <input type="number" class="form-control" name="max_power" placeholder="До" max="9999" id="max_power">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        <button type="submit" class="btn btn&#45;&#45;first">Найти</button>-->
+<!--                        </form>-->
+<!--                    </div>-->
+<!--        </div>-->
+<!--        <div class="col-md-9">-->
+<!--            <div class="row main-content-product">-->
+<!--                {% if item_list %}-->
+<!--                {% for el in item_list %}-->
+<!--                <div class="product-card">-->
+<!--                    <div class="product-thumb">-->
+<!--                        <a href="{{ el.get_absolute_url }}"><img src="{{ el.image.url }}" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="product-details">-->
+<!--                        <div class="product-bottom-details d-flex justify-content-center">-->
+<!--                            <h4><a href="{{ el.get_absolute_url }}">{{ el.name }}</a></h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                {% endfor %}-->
+<!--                {% else %}-->
+<!--                    Товары отсутствуют-->
+<!--                {% endif %}-->
+<!--            </div>-->
+<!--        </div>-->
   </div>
 </div>
 {% endblock %}
