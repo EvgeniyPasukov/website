@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <div class="container">
   <div class="row details-block">
-    <div class="col-5">
+    <div class="col-5 details-block-img">
         <div class="f-carousel" id="myCarousel">
             {% for image in detail.catalogimages_set.all %}
                 <div class="f-carousel__slide details-pictures" data-thumb-src="{{ image.image.url }}">
@@ -17,7 +17,7 @@
             {% endfor %}
         </div>
     </div>
-    <div class="col-7">
+    <div class="col-7 details-block-description ">
       <div class="brand-jumbotron__desc-title details-header">{{ detail.name }}</div>
       <div class="details-description">{{ detail.description }}</div>
         <br>

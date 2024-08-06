@@ -163,6 +163,18 @@
         display:flex;
         transition: display 0.8s;
     }
+    .details-block {
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+    .details-block-img {
+        width:90%;
+        margin-bottom:20px;
+    }
+    .details-block-description {
+        width:100%;
+    }
 }
 
 @media (max-width: 580px) {

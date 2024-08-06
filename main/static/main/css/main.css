@@ -1815,8 +1815,7 @@ padding-left: 10px;
 
 .details-header{
     display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
+    padding-left: 25px;
 }
 
 .details-header_port{
@@ -1829,6 +1828,7 @@ padding-left: 10px;
 .details-description{
     padding-left: 25px;
     padding-right: 20px;
+    font-size:18px;
 }
 
 .tech{
