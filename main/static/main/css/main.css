@@ -660,6 +660,10 @@ h2 {
 .slider-products__slide {
   margin: 0 13px;
 }
+.slider-products__slide:hover {
+    background-color: #fff;
+    box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+}
 .slider-products__slide .product {
   height: 296px;
 }
