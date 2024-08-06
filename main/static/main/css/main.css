@@ -358,7 +358,6 @@ h2 {
 .product-section__item {
   display: block;
   height: 100%;
-  background-color: #fbfbfb;
   position: relative;
   transition: background-color .45s, box-shadow .55s;
   cursor: pointer;
@@ -396,7 +395,7 @@ h2 {
   text-transform: uppercase;
   text-align: center;
   position: absolute;
-  bottom: 30px;
+  bottom: 25px;
   left: 25px;
   right: 25px;
   overflow: hidden;
@@ -659,6 +658,7 @@ h2 {
 }
 .slider-products__slide {
   margin: 0 13px;
+  transition: all 0.3s;
 }
 .slider-products__slide:hover {
     background-color: #fff;
@@ -779,7 +779,7 @@ h2 {
   position: absolute;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 80%;
   object-fit:cover;
 }
 .press__item-img-small {
