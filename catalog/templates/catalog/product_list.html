@@ -3,7 +3,7 @@
 {% block title %}Продукция{% endblock %}
 
 {% block body %}
-<script src="/static/main/js/slider-power.js" defer></script>
+<script src="/static/main/js/slider-power.js" defer xmlns="http://www.w3.org/1999/html"></script>
 <script src="/static/main/js/scripts.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
@@ -12,22 +12,18 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
 
 
-<section class="product-section">
-        <div class="grid-container">
-            <div class="col-md-12">
-<!--                https://www.varton.ru/products/basic-kategoriya/fl-basic-2-0/-->
-<!--                аналогично и тут как по ссылке и фото подкатегории-->
-                <div class="row">
-                    <div class="col-5">
-                        <img src="{{ subcategory.image.url }}" alt="" class="press__item-img-small">
-                    </div>
-                    <div class="col-4">
-                        <h2 class="brand-jumbotron__desc-title">{{ subcategory.name }}</h2>
-                        <h2 class="brand-jumbotron__desc-description">{{ subcategory.description }}</h2>
-                    </div>
+<section class="product-section-subcategory">
+            <div class="subcategory-container">
+                <div class="subcategory-container-img">
+                    <img src="{{ subcategory.image.url }}" alt="" class="press__item-img-small">
+                </div>
+                <div class="subcategory-container-title">
+                    <div><h2 class="brand-jumbotron__desc-title subcategory-container-name">{{ subcategory.name }}</h2></div>
+                    <div class="subcategory-container-description"><p>Описание</p></div>
+                    <div><p>{{ subcategory.description }}</p></div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="subcategory-items">
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
                     {% for product in products %}
                     <div  class="slider-products__slide">
@@ -39,8 +35,34 @@
                     {% endfor %}
                 </div>
             </div>
-        </div>
+<!--            <div class="col-md-12">-->
+<!--&lt;!&ndash;                https://www.varton.ru/products/basic-kategoriya/fl-basic-2-0/&ndash;&gt;-->
+<!--&lt;!&ndash;                аналогично и тут как по ссылке и фото подкатегории&ndash;&gt;-->
+<!--                <div class="row subcategory-container">-->
+<!--                    <div class="col-5">-->
+<!--                        <img src="{{ subcategory.image.url }}" alt="" class="press__item-img-small">-->
+<!--                    </div>-->
+<!--                    <div class="col-4">-->
+<!--                        <div class="subcategory-description"> <h2 class="brand-jumbotron__desc-title">{{ subcategory.name }}</h2>-->
+<!--                        <p>{{ subcategory.description }}</p></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="slider-products slider-products&#45;&#45;latent js-slick&#45;&#45;products-latent clearfix">-->
+<!--                    {% for product in products %}-->
+<!--                    <div  class="slider-products__slide">-->
+<!--                        <a class="product-section__item" href="{{ product.get_absolute_url }}">-->
+<!--                            <div><img src="{{ product.image.url }}" alt="" class="press__item-img"></div>-->
+<!--                            <div class="product-section__item-heading">{{ product.name }}</div>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    {% endfor %}-->
+<!--                </div>-->
+<!--            </div>-->
     </section>
-  </div>
-</div>
+
+
+
+
 {% endblock %}
