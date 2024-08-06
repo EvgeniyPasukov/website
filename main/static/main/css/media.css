@@ -18,6 +18,10 @@
     .col-6 {
         width:62%;
     }
+    .product-section-subcategory {
+        padding-left:30px;
+        padding-right:30px;
+    }
 }
 
 @media (max-width: 1180px) {
@@ -93,11 +97,22 @@
     .shadow-description {
         line-height: 35px;
     }
+    .brand-jumbotron__desc-description {
+        margin:0;
     }
 }
 
-@media (max-width:650px) {
-
+@media (max-width:660px) {
+    .subcategory-container {
+        flex-direction:column;
+        align-items:center;
+    }
+    :root .slider-products--latent {
+        padding-bottom:0px;
+    }
+    :root .slider-products {
+        padding-bottom:0px;
+    }
 }
 
 @media (max-width:650px) {
@@ -189,5 +204,10 @@
         line-height:20px;
         padding:0 5px;
         height:30px;
+    }
+}
+@media (max-width: 450px) {
+    .brand-jumbotron__desc-text {
+        font-size:14px;
     }
 }
