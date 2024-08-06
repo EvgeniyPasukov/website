@@ -8,6 +8,7 @@ SECRET_KEY = 'django-insy_cy++nif!cf)a=vo7*!=y4e=nb3b=3di0wy#5=dc^t5lgky$q'
 
 DEBUG = False
 
+
 ALLOWED_HOSTS = ["www.asv-led.by", "127.0.0.1", "93.125.99.54"]
 
 DATABASES = {

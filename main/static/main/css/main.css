@@ -951,18 +951,19 @@ align-items: center;
 .brand-jumbotron__desc-title {
   font-size: 30px;
   line-height: 40px;
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: .05em;
   font-family: 'GoodPro-Medium', 'PT Sans', Arial, Helvetica, sans-serif;
+  color: #000;
 }
 .brand-jumbotron__desc-description {
-  font-size: 15px;
-  line-height: 15px;
+  font-size: 16px;
   font-weight: normal;
   letter-spacing: .04em;
-  color: black;
   margin: 10 200 10;
   font-family: 'GoodPro-Medium', 'PT Sans', Arial, Helvetica, sans-serif;
+  line-height: 23px;
+  color: #505050;
 }
 .brand-jumbotron__desc-text {
   font-size: 15px;
