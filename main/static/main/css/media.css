@@ -147,7 +147,7 @@
         right: 0;
         height: 100vh;
         z-index: 2;
-        background: black;
+        background: #525254;
         align-items: center;
         margin-top:0px!important;
         transition: transform 0.5s;

@@ -10,19 +10,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js" integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
-
-
 <section class="product-section">
         <div class="grid-container">
             <div class="col-md-12 product-section-title">
-<!--                https://www.varton.ru/products/basic-kategoriya/  -->
-<!--                заголовок категории и описание как по ссылке-->
                 <h2 class="brand-jumbotron__desc-title">{{ category.name }}</h2>
                 <h2 class="brand-jumbotron__desc-description">{{ category.description|linebreaksbr }}</h2>
             </div>
             <div class="col-md-12">
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
-
                     {% for subcategory in subcategories %}
                         <div  class="slider-products__slide">
                             <a class="product-section__item" href="{{ subcategory.get_absolute_url }}">
@@ -31,16 +26,8 @@
                             </a>
                         </div>
                     {% endfor %}
-
                 </div>
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
 {% endblock %}
