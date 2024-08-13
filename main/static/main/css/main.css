@@ -1946,6 +1946,9 @@ tr:nth-child(even) {
     background: #9092a4;
     width:120px;
 }
+.text-wrapping {
+    word-break: break-all;
+}
 /* slider production
 .slider {
   -webkit-appearance: none;
