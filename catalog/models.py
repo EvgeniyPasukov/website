@@ -32,7 +32,7 @@ class SubCategory(models.Model):
     category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return self.name + '(категория :' + self.category.name + ')'
 
     class Meta:
         verbose_name = 'Подкатегория'
@@ -108,7 +108,6 @@ class Catalog(models.Model):
 
     def __str__(self):
         return self.name
-
 
     def save(self, *args, **kwargs):
         if not self.slug:
