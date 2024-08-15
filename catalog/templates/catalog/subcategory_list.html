@@ -13,10 +13,10 @@
 <section class="product-section">
         <div class="grid-container">
             <div class="col-md-12 product-section-title">
-            <div class=" product-section-title">
-                <h2 class="brand-jumbotron__desc-title">{{ category.name }}</h2>
-                <div><h2 class="brand-jumbotron__desc-description text-wrapping">{{ category.description|linebreaksbr }}</h2></div>
-            </div>
+                <div class=" product-section-title">
+                    <h2 class="brand-jumbotron__desc-title">{{ category.name }}</h2>
+                    <div><h2 class="brand-jumbotron__desc-description text-wrapping">{{ category.description|linebreaksbr }}</h2></div>
+                </div>
             <div class="col-md-12">
                 <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
                     {% for subcategory in subcategories %}
@@ -30,5 +30,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}
