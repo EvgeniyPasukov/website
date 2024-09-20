@@ -12,24 +12,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.css" integrity="sha512-SZgE3m1he0aEF3tIxxnz/3mXu/u/wlMNxQSnE0Cni9j/O8Gs+TjM9tm1NX34nRQ7GiLwUEzwuE3Wv2FLz2667w==" crossorigin="anonymous" />
 
 <section class="product-section">
-        <div class="grid-container">
-            <div class="col-md-12">
-                <h2 class="brand-jumbotron__desc-title">Категории</h2>
-            </div>
-            <div class="col-md-12">
-                <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
-                    {% for category in categories %}
-                        <div  class="slider-products__slide">
-                            <a class="product-section__item" href="{{ category.get_absolute_url }}">
-                                <img src="{{ category.image.url }}" alt="" class="press__item-img">
-                                <div class="product-section__item-heading">{{ category.name }}</div>
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
+    <div class="grid-container">
+        <div class="col-md-12">
+            <h2 class="brand-jumbotron__desc-title">Категории</h2>
+        </div>
+        <div class="col-md-12">
+            <div class="slider-products slider-products--latent js-slick--products-latent clearfix">
+                {% for category in categories %}
+                    <div  class="slider-products__slide">
+                        <a class="product-section__item" href="{{ category.get_absolute_url }}">
+                            <img src="{{ category.image.url }}" alt="" class="press__item-img">
+                            <div class="product-section__item-heading">{{ category.name }}</div>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    </section>
-  </div>
-</div>
+    </div>
+</section>
 {% endblock %}

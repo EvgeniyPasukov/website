@@ -362,6 +362,11 @@ h2 {
   transition: background-color .45s, box-shadow .55s;
   cursor: pointer;
 }
+.product-section__item__portfolio {
+  display: block;
+  height: 100%;
+  position: relative;
+}
 .product-section__item:hover {
   background-color: #fff;
   box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
@@ -780,6 +785,16 @@ h2 {
   justify-content: center;
   width: 100%;
   height: 80%;
+  object-fit:cover;
+}
+.press__item-img__portfolio {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   object-fit:cover;
 }
 .press__item-img-small {
@@ -1949,34 +1964,3 @@ tr:nth-child(even) {
 .text-wrapping {
     word-break: break-all;
 }
-/* slider production
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  border-radius: 5px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  border-radius: 30%;
-  background: #04AA6D;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  border-radius: 30%;
-  background: #04AA6D;
-  cursor: pointer;
-}*/
-

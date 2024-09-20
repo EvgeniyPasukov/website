@@ -18,4 +18,3 @@ class PortfolioImagesInline(admin.TabularInline):
 class PortfolioAdmin(admin.ModelAdmin):
     list_display = ('title', 'picture')
     prepopulated_fields = {'url': ('title',)}
-    inlines = [PortfolioImagesInline]
