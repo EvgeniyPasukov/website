@@ -16,5 +16,13 @@ class PortfolioImagesInline(admin.TabularInline):
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
-    list_display = ('title', 'picture')
+    list_display = ('title', 'picture', 'get_image')
+    readonly_fields = ('get_image',)
     prepopulated_fields = {'url': ('title',)}
+
+    def get_image(self, obj):
+        return mark_safe(f'<img src={obj.picture.url} width="100", height="100" ')
+
+    get_image.short_description = 'Изображение'
+
+
