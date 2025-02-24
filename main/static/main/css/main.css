@@ -133,6 +133,8 @@ header {
 /*slider start*/
 .itc-slider {
   position: relative;
+  width: 100%;
+  min-height: 300px; /* Минимальная высота для мобильных устройств */
 }
 
 .itc-slider-wrapper {
@@ -143,7 +145,7 @@ header {
 
 .itc-slider-items {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
 
@@ -250,6 +252,7 @@ header {
     /*min-height:550px;*/
     max-height: 600px;
     width: 100%;
+    height: 100%;
     background-position: 50% 0;
     background-size: cover;
     background-attachment: scroll;
@@ -263,7 +266,8 @@ header {
     width: 35%;
     color: white;
     object-fit: fill;
-    background-color: rgba(247, 242, 242, .92);
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    text-align: center;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
@@ -277,9 +281,24 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Современный шрифт */
+    line-height: 1.6; /* Улучшенный межстрочный интервал */
 }
+
 .shadow-title {
-    margin-top:0;
+    font-size: 24px; /* Увеличенный размер шрифта для заголовка */
+    font-weight: 600; /* Полужирный шрифт */
+    color: #222; /* Темный цвет текста для контраста */
+    margin-bottom: 10px; /* Отступ снизу */
+    letter-spacing: 0.5px; /* Небольшой межбуквенный интервал */
+}
+
+.shadow-description {
+    font-size: 16px; /* Умеренный размер шрифта для описания */
+    color: #444; /* Серый цвет текста для минимализма */
+    margin-bottom: 15px; /* Отступ снизу */
+    font-weight: 400; /* Нормальный вес шрифта */
+    line-height: 1.5; /* Улучшенный межстрочный интервал */
 }
 
 @keyframes show {
@@ -315,8 +334,6 @@ h2 {
 
 .btn{
     display: block;
-    /*width: 30%;*/
-    border: none;
     outline: none;
     text-transform: uppercase;
     letter-spacing: 0.16em;
@@ -325,27 +342,28 @@ h2 {
     cursor: pointer;
     background-color: transparent;
     color: #82858a;
-    border: 1px solid #a7a9ac;
+    border: 1px solid #6b6c6e;
     height: 40px;
     line-height: 38px;
     transition: color .45s, border-color .35s;
     padding-top: 2px;
 }
 
-.btn--first{
-    font-size: 15px;
-    transition: background-color .45s, color .35s
-    background-color: transparent;
-    margin: 0 auto;
-    margin-top: 10%;
+.btn--first {
+    font-size: 14px; /* Умеренный размер шрифта кнопки */
+    padding: 10px 20px; /* Умеренные отступы внутри кнопки */
+    border: 1px solid #333 !important; /* Принудительно применить рамку */
+    background-color: transparent; /* Прозрачный фон */
+    color: #333; /* Темный цвет текста */
+    font-weight: 500; /* Средний вес шрифта */
+    letter-spacing: 0.5px; /* Небольшой межбуквенный интервал */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавные переходы */
+    border-radius: 4px; /* Скругленные углы кнопки */
 }
 
-.btn:hover {
-    /*background-color: #e01414; -заливка кнопки красным, слово-белым
-    color: #edebeb;
-    color: #f39600;*/
-    border-color: red;
-    color: red;
+.btn--first:hover {
+    background-color: #333; /* Темный фон при наведении */
+    color: #fff; /* Белый текст при наведении */
 }
 
             /*PRODUCTION*/
@@ -1662,6 +1680,10 @@ figure.effect-text-four:hover p {
     margin-bottom: 30px;
 }
 
+.container {
+    margin-top: 40px; /* Отступ сверху 40 пикселей */
+}
+
 .container-prod{
     margin-top: 40px;
     margin-bottom: 40px;
@@ -1882,12 +1904,25 @@ tr:nth-child(even) {
     padding-top: 60px;
 }
 .modal-content {
-    background-color: #fefefe;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 40%;
+    width: 50%; /* Ширина модального окна */
+    max-width: 600px; /* Максимальная ширина */
+    background-color: #fff;
+    border-radius: 8px; /* Скругленные углы */
 }
+
+/* Центрирование текста и элементов в модальном окне */
+.text-center {
+    text-align: center;
+}
+
+/* Центрирование кнопки "Запросить цену" */
+.mt-4 {
+    margin-top: 1.5rem; /* Отступ сверху */
+}
+
 .close {
     color: #aaa;
     float: right;
