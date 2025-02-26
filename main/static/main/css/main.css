@@ -87,21 +87,11 @@ header {
     color: gray;
     cursor: pointer;
 }
-/*увеличивание текста*/
-/*.menu ul li {
-    transition: transform .5s ease;
-}
 
-.menu ul li a {
-    text-decoration: none;
-    color: gray;
+.link{
+    color: #000;
     cursor: pointer;
 }
-
-.menu ul li:hover, .top-menu ul a:hover {
-    text-decoration: none;
-    transform: scale(1.1);
-}*/
 
 .menu ul li{
     position: relative;
@@ -145,7 +135,7 @@ header {
 
 .itc-slider-items {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.6s ease-in-out;
   will-change: transform;
 }
 
@@ -258,12 +248,12 @@ header {
     background-attachment: scroll;
     border-radius: 0;
     transition: opacity .2s;
-    object-fit:none;
+    object-fit: cover;
 }
 
 .shadow{
     height: 100%;
-    width: 35%;
+    width: 38%;
     color: white;
     object-fit: fill;
     background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
@@ -281,22 +271,22 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Helvetica Neue', Arial, sans-serif; /* Современный шрифт */
     line-height: 1.6; /* Улучшенный межстрочный интервал */
 }
 
 .shadow-title {
-    font-size: 24px; /* Увеличенный размер шрифта для заголовка */
-    font-weight: 600; /* Полужирный шрифт */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px; /* Увеличенный размер шрифта для заголовка */
+    font-weight: 500; /* Полужирный шрифт */
     color: #222; /* Темный цвет текста для контраста */
-    margin-bottom: 10px; /* Отступ снизу */
-    letter-spacing: 0.5px; /* Небольшой межбуквенный интервал */
+    margin-bottom: 12px; /* Отступ снизу */
+    letter-spacing: 0.1px;
 }
 
 .shadow-description {
     font-size: 16px; /* Умеренный размер шрифта для описания */
     color: #444; /* Серый цвет текста для минимализма */
-    margin-bottom: 15px; /* Отступ снизу */
+    margin: 0 35px;
     font-weight: 400; /* Нормальный вес шрифта */
     line-height: 1.5; /* Улучшенный межстрочный интервал */
 }
@@ -913,31 +903,6 @@ h2 {
   padding-top: 1px;
   text-transform: lowercase;
 }
-.footer_main {
-  background-color: #fbfbfb;
-}
-
-/*** site map list *****/
-/*.footer-list {
-  padding-top: 8px;
-  padding-left: 0
-}
-.footer-list__title {
-  display: block;
-  min-height: 25px;
-  margin: 11px 0 3px 0;
-  font-size: 12px;
-  line-height: 25px;
-  letter-spacing: .1em;
-  font-weight: 600;
-}
-.footer-list__item {
-  padding-bottom: 1px;
-  margin: 15px 0;
-}
-.footer-list__link {
-  font-size: 12px;
-}*/
 
 /***** additional info *****/
 /*.footer_info {
@@ -950,17 +915,6 @@ h2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
-.footer-subscribe{
- }
-.footer-subscribe .form-row {
-display: flex;
-align-items: center;
-}
-
-.footer-subscribe .form-row input {
-}
-
 
 .brand-jumbotron {
   height: 186px;
@@ -986,7 +940,6 @@ align-items: center;
 .brand-jumbotron__desc-title {
   font-size: 30px;
   line-height: 40px;
-  font-weight: bold;
   letter-spacing: .05em;
   font-family: 'GoodPro-Medium', 'PT Sans', Arial, Helvetica, sans-serif;
   color: #000;
@@ -1038,7 +991,6 @@ align-items: center;
 .grid-container:after, .grid-container--fluid:after, .grid-row:after {
   clear: both;
 }
-
 
 /* ––––––––––––––––––––––––––––––– */
 
@@ -1825,12 +1777,6 @@ padding-left: 10px;
     margin-bottom: 40px;
     position: relative;
 }
-
-/*.details-pictures{
-    position: relative;
-    height: 600px;
-    border: 1px solid #e8e8e8;
-}*/
 
 #myCarousel {
     max-width: 640px;

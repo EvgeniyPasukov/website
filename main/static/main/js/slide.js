@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const indicators = slider.querySelectorAll('.itc-slider-indicator');
 
     let currentIndex = 0;
-    let autoSlideInterval;
+    let autoSlideTimeout;
 
     // Функция для показа текущего слайда
     function showSlide(index) {
@@ -27,35 +27,36 @@ document.addEventListener('DOMContentLoaded', function () {
     function nextSlide() {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
+        startAutoSlide(); // Перезапуск таймера
     }
 
     // Функция для переключения на предыдущий слайд
     function prevSlide() {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
+        startAutoSlide(); // Перезапуск таймера
     }
 
     // Запуск автоматического переключения слайдов
     function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 4000); // 4 секунды
+        clearTimeout(autoSlideTimeout); // Очистка предыдущего таймера
+        autoSlideTimeout = setTimeout(nextSlide, 4000); // 4 секунды
     }
 
     // Остановка автоматического переключения слайдов
     function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
+        clearTimeout(autoSlideTimeout);
     }
 
     // Обработчики для кнопок "Назад" и "Вперед"
     prevBtn.addEventListener('click', () => {
         stopAutoSlide();
         prevSlide();
-        startAutoSlide();
     });
 
     nextBtn.addEventListener('click', () => {
         stopAutoSlide();
         nextSlide();
-        startAutoSlide();
     });
 
     // Обработчики для индикаторов

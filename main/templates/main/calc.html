@@ -1,9 +1,9 @@
 {% extends 'main/index.html' %}
 
 {% block title %}Светорасчет{% endblock %}
-
+{% block scripts %}
+{% endblock %}
 {% block body %}
-
 <form action="" method="post" novalidate="novalidate">
   {% csrf_token %}
   {% if success %}
@@ -53,12 +53,13 @@
               {% endif %}
 
             <div class="d-grid gap-2 col-6 mx-auto">
-            <button class="btn btn--first" type="submit" formnovalidate>Отправить</button>
+              <div class="text-center mt-4">
+                <button class="btn btn--first" type="submit" formnovalidate>Отправить</button>
+              </div>
           </div>
           </div>
         </div>
       </div>
     </div>
 </form>
-
 {% endblock %}

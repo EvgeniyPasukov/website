@@ -1,17 +1,17 @@
 {% extends 'main/index.html' %}
 {% load static %}
 {% block title %}Подробнее{% endblock %}
-
 {% block body %}
-
+{% block scripts %}
+{% endblock %}
 <link rel="stylesheet" href="{% static 'main/css/carousel.css' %}">
 <link rel="stylesheet" href="{% static 'main/css/carousel.thumbs.css' %}">
-
+<script src="/static/main/js/carousel.umd.js"></script>
+<script src="/static/main/js/carousel.thumbs.umd.js"></script>
 <script src="/static/main/js/jquery-3.6.0.min.js"></script>
-
 <div class="container">
   <div class="row details-block">
-    <div class="col-5 details-block-img">
+    <div class="col-5">
         <div class="f-carousel" id="myCarousel">
             {% for image in detail.catalogimages_set.all %}
                 <div class="f-carousel__slide details-pictures" data-thumb-src="{{ image.image.url }}">
@@ -20,9 +20,9 @@
             {% endfor %}
         </div>
     </div>
-    <div class="col-7 details-block-description ">
+    <div class="col-7">
       <div class="brand-jumbotron__desc-title details-header">{{ detail.name }}</div>
-      <div class="details-description text-wrapping">{{ detail.description }}</div>
+      <div class="details-description text-wrapping">{{ detail.description|linebreaks }}</div>
         <br>
       <div class="tech">Технические характеристики</div>
       <div class="details-table">
@@ -148,10 +148,6 @@
     </div>
   </div>
 </div>
-
-<script src="/static/main/js/carousel.umd.js"></script>
-<script src="/static/main/js/carousel.thumbs.umd.js"></script>
-
 <script>
     new Carousel(document.getElementById("myCarousel"), {
       // Your custom options

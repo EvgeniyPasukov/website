@@ -9,7 +9,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
-from .models import Catalog, Category, Power as PowModel, Protection as ProModel, SubCategory
+from .models import Catalog, Category,  SubCategory
 
 
 class CategoryListView(ListView):
@@ -91,7 +91,7 @@ class ProductDetailView(DetailView):
             f'Светильник: {url}\n\n'
         )
         from_email = settings.DEFAULT_FROM_EMAIL
-        recipient_list = ['pasukov.e@yandex.ru']
+        recipient_list = ['ASV-LED@yandex.by']
 
         try:
             send_mail(

@@ -9,17 +9,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Главная страница{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}?v=1.0.1">
     <link rel="stylesheet" href="{% static 'main/css/adaptiveMain.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/adaptiveProduct.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/light.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/media.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
     <script src="/static/main/js/bootstrap.bundle.min.js"></script>
-
     <link rel="shortcut icon" type="image/png"  href="/static/main/img/favicon.png">
-    <script src="/static/main/js/bigpicture.js"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="/static/main/js/adaptiveMenu.js" defer></script>
+    {% block scripts %}
+    <script src="/static/main/js/slide.js" defer></script>
+    {% endblock %}
 </head>
 <body>
     {% block header %}
@@ -68,22 +70,22 @@
     </div>
     {% endblock %}
 {% block body %}
-    <div class="itc-slider" data-autoplay="false" data-interval="4000" data-loop="true" data-refresh="true" data-slider="itc-slider">
+    <div class="itc-slider">
     <div class="itc-slider-wrapper">
         <div class="itc-slider-items">
             {% for slide in slide_list %}
             <div class="itc-slider-item">
-    <img src="{{ slide.picture.url }}" alt="{{ slide.title }}" class="slide-pref">
-    <div class="shadow">
-        <h1 class="shadow-title">{{ slide.title }}</h1>
-        <h2 class="shadow-description">{{ slide.description }}</h2>
-        {% if slide.url %}
-        <a href="{{ slide.url }}" class="slider-a">
-            <button class="btn btn--first">{{ slide.button }}</button>
-        </a>
-        {% endif %}
-    </div>
-</div>
+                <img src="{{ slide.picture.url }}" alt="{{ slide.title }}" class="slide-pref">
+                <div class="shadow">
+                    <h1 class="shadow-title">{{ slide.title }}</h1>
+                    <h2 class="shadow-description">{{ slide.description }}</h2>
+                    {% if slide.url %}
+                    <a href="{{ slide.url }}" class="slider-a">
+                        <button class="btn btn--first">{{ slide.button }}</button>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
@@ -154,15 +156,12 @@
                 <a class="link link--secondary" href="mailto:ASV-LED@yandex.by">ASV-LED@yandex.by</a>
             </p>
             <p class="brand-jumbotron__desc-text">Контактный номер:
-                <a class="link link--secondary" href="tel:+375297007917">+375(29)700-79-17</a>,
-                <a class="link link--secondary" href="tel:+375298877741">+375(29)88-777-41</a>
+                <a class="link" href="tel:+375297007917">+375(29)700-79-17</a>,
+                <a class="link" href="tel:+375298877741">+375(29)88-777-41</a>
             </p>
         </div>
         <br>
     </div>
 {% endblock %}
-
-<script src="/static/main/js/slide.js" defer></script>
-<script src="/static/main/js/adaptiveMenu.js" defer></script>
 </body>
 </html>
