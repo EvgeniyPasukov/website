@@ -97,19 +97,22 @@
     }
 }
 
-@media (max-width:780px) {
+@media (max-width:767px) {
     .shadow-title {
-        font-size:14px;
+        font-size:16px;
+        line-height:20px;
+        /*padding-top: 30%;*/
     }
     .shadow-description {
         line-height: 35px;
+        font-size: 12px;
     }
     .brand-jumbotron__desc-description {
         margin:0;
     }
 }
 
-@media (max-width:780px) {
+@media (max-width:767px) {
     .modal-content {
         width:70%;
     }
@@ -167,6 +170,7 @@
         display:flex;
         flex-direction:column;
         align-items:center;
+        padding: 10px;
     }
     .details-block-img {
         width:90%;
@@ -195,22 +199,16 @@
         width:100%;
     }
     .col-6 {
-        width:80%;
+        width:80% !important;
     }
     .shadow {
         padding:0;
-    }
-    .shadow-title {
-        font-size:12px;
-    }
-    .shadow-description {
-        font-size: 12px;
     }
     .btn--first {
         margin-top:0;
         font-size:10px;
         padding:0 5px;
-        width:90%;
+        width:70%;
     }
     .slider-a {
         display:block;
@@ -231,20 +229,222 @@
     .tel {
         display:none;
     }
-    .shadow-title {
-        font-size:14px;
-        line-height:20px;
-    }
+
     .btn--first {
         margin-bottom:0;
         font-size: 10px;
         line-height:20px;
         padding:0 5px;
-        height:30px;
     }
 }
 @media (max-width: 450px) {
     .brand-jumbotron__desc-text {
         font-size:14px;
+    }
+}
+
+
+
+/* Адаптивное меню для мобильных устройств */
+@media (max-width: 767px) {
+
+    .itc-slider-indicators {
+    z-index: 0;
+    }
+
+    .menu_navigation li {
+        margin-left: 0;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+}
+
+/* Адаптивный слайдер */
+@media (max-width: 767px) {
+    .itc-slider {
+        min-height: 200px; /* Уменьшаем высоту слайдера */
+    }
+
+    .itc-slider-item {
+        /*height: 100%;  Занимает всю высоту слайда */
+        object-fit: cover;  /*Сохраняет пропорции и заполняет контейнер*/
+    }
+
+    .shadow {
+        width: 100%; /* Занимаем всю ширину экрана */
+        background: rgba(255, 255, 255, 0.5); /* Полупрозрачный фон */
+        padding: 10px;
+    }
+
+}
+
+/* Адаптивная секция с продуктами */
+@media (max-width: 767px) {
+    .product-section {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .slider-products__slide {
+        width: 100%; /* Занимаем всю ширину экрана */
+        margin: 10px 0; /* Уменьшаем отступы между продуктами */
+    }
+
+    .product-section__item-heading {
+        font-size: 12px; /* Уменьшаем размер шрифта заголовка продукта */
+        bottom: 10px; /* Уменьшаем отступ снизу */
+    }
+}
+
+/* Адаптивная секция "О бренде" */
+@media (max-width: 767px) {
+    .brand-jumbotron__desc-inner {
+        width: 100%; /* Занимаем всю ширину экрана */
+        padding: 0 40px; /* Добавляем отступы по бокам */
+    }
+
+    .brand-jumbotron__desc-title {
+        font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+    }
+
+    .brand-jumbotron__desc-text {
+        font-size: 14px; /* Уменьшаем размер шрифта текста */
+    }
+}
+
+/* Адаптивные изображения */
+@media (max-width: 767px) {
+    .product-section__item img {
+        width: 100%; /* Занимаем всю ширину экрана */
+        height: auto; /* Сохраняем пропорции */
+    }
+}
+
+/* Адаптивные шрифты */
+@media (max-width: 767px) {
+    h1 {
+        font-size: 24px; /* Уменьшаем размер шрифта заголовка */
+        line-height: 30px; /* Уменьшаем межстрочный интервал */
+    }
+
+    h2 {
+        font-size: 18px; /* Уменьшаем размер шрифта подзаголовка */
+        line-height: 24px; /* Уменьшаем межстрочный интервал */
+    }
+}
+
+/* Адаптивные отступы */
+@media (max-width: 767px) {
+    .grid-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .product-section {
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+}
+
+/*product_details*/
+/* Адаптивный макет для мобильных устройств */
+@media (max-width: 767px) {
+    .details-block {
+        flex-direction: column; /* Меняем направление на вертикальное */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .col-5, .col-7 {
+        width: 100% !important; /* Занимаем всю ширину экрана */
+    }
+    .col-5 {
+    padding: 0;
+    }
+
+    .details-pictures {
+        width: 100%; /* Занимаем всю ширину экрана */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+    }
+
+    .details-description {
+        padding-left: 10px; /* Уменьшаем отступы */
+        padding-right: 10px;
+    }
+
+    .details-table {
+        padding-left: 10px; /* Уменьшаем отступы */
+        padding-right: 10px;
+    }
+
+    .f-carousel {
+        height: 400px; /* Увеличиваем высоту слайдера */
+    }
+
+    .carousel-img {
+        height: 100%; /* Занимает всю высоту слайда */
+        width: 100%; /* Занимает всю ширину слайда */
+        object-fit: cover; /* Сохраняет пропорции и заполняет контейнер */
+    }
+}
+/* Увеличение изображений в слайдере */
+@media (max-width: 767px) {
+    .f-carousel__slide {
+        height: 400px; /* Увеличиваем высоту слайда */
+    }
+}
+
+/* Адаптивные шрифты и отступы */
+@media (max-width: 767px) {
+
+    .tech {
+        font-size: 18px; /* Уменьшаем размер шрифта технических характеристик */
+        text-align: center; /* Центрируем заголовок */
+    }
+
+    .table {
+        font-size: 14px; /* Уменьшаем размер шрифта таблицы */
+    }
+}
+/* Адаптивное модальное окно */
+@media (max-width: 767px) {
+    .modal-content {
+        width: 90%; /* Занимаем всю ширину экрана */
+        margin: 10% auto; /* Центрируем модальное окно */
+    }
+
+    .forma-input {
+        width: 100%; /* Занимаем всю ширину экрана */
+    }
+
+    .form-control {
+        width: 100%; /* Занимаем всю ширину экрана */
+    }
+
+}
+/* Адаптивные изображения */
+@media (max-width: 767px) {
+    .carousel-img {
+        height: 100%; /* Занимает всю высоту слайда */
+        width: 100%; /* Занимает всю ширину слайда */
+        object-fit: cover; /* Сохраняет пропорции и заполняет контейнер */
+    }
+}
+/* Адаптивные таблицы */
+@media (max-width: 767px) {
+    .table {
+        width: 100%; /* Занимаем всю ширину экрана */
+        overflow-x: auto; /* Добавляем горизонтальную прокрутку */
+    }
+
+    .table th, .table td {
+        padding: 8px; /* Уменьшаем отступы внутри ячеек */
+    }
+}
+/* Адаптивные кнопки */
+@media (max-width: 767px) {
+
+    .btn{
+    padding-bottom: 0rem;
     }
 }
