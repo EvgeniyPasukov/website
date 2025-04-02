@@ -1821,7 +1821,8 @@ padding-left: 10px;
 
 .details-header{
     display: flex;
-    padding-left: 25px;
+    justify-content: center;
+    align-items: center;
 }
 
 .details-header_port{

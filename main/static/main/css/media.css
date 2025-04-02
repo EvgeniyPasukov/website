@@ -101,7 +101,6 @@
     .shadow-title {
         font-size:16px;
         line-height:20px;
-        /*padding-top: 30%;*/
     }
     .shadow-description {
         line-height: 35px;
@@ -181,7 +180,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 767px) {
     .main-content {
         align-items: center;
         flex-direction: column;
@@ -243,8 +242,6 @@
     }
 }
 
-
-
 /* Адаптивное меню для мобильных устройств */
 @media (max-width: 767px) {
 
@@ -257,7 +254,6 @@
         text-align: center;
         padding: 10px 0;
     }
-
 }
 
 /* Адаптивный слайдер */
@@ -276,7 +272,6 @@
         background: rgba(255, 255, 255, 0.5); /* Полупрозрачный фон */
         padding: 10px;
     }
-
 }
 
 /* Адаптивная секция с продуктами */

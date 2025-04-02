@@ -22,7 +22,6 @@
     </div>
     <div class="col-7">
       <div class="brand-jumbotron__desc-title details-header">{{ detail.name }}</div>
-      <div class="details-description text-wrapping">{{ detail.description|linebreaks }}</div>
         <br>
       <div class="tech">Технические характеристики</div>
       <div class="details-table">
@@ -64,6 +63,12 @@
                         <th>Номинальная частота</th>
                         <td>{{ detail.herz }}</td>
                     </tr>
+                    {% if detail.kss %}
+                      <tr>
+                        <th>Тип КСС</th>
+                        <td>{{ detail.kss }}</td>
+                      </tr>
+                    {% endif %}
                     <tr>
                         <th>Коэффициент мощности</th>
                         <td>{{ detail.koef_power }}</td>
@@ -98,7 +103,7 @@
                     </tr>
                 </tbody>
             </table>
-
+            <div class="details-description text-wrapping">{{ detail.description|linebreaks }}</div>
             <div class="text-center mt-4"> <!-- Добавлен контейнер для центрирования -->
                 <button class="btn btn--first" id="request-price-btn">Запросить цену</button>
             </div>

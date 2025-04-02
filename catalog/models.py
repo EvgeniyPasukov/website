@@ -93,6 +93,7 @@ class Catalog(models.Model):
     temp_sveta = models.ForeignKey(Kelvin, verbose_name='Цветовая температура, К', on_delete=models.SET_NULL, null=True,)
     napruga = models.CharField('Номинальное напряжение, В', max_length=100)
     herz = models.CharField('Номинальная частота, Гц', max_length=100, default='Гц')
+    kss = models.CharField('КСС', max_length=10, default='')
     koef_power = models.CharField('Коэффициент мощности', max_length=100, default='')
     koef_ra = models.CharField('Коэффициент цветопередачи, Ra', max_length=100, default='Ra')
     protection = models.ForeignKey(Protection, verbose_name='Степень защиты', on_delete=models.SET_NULL, null=True,)
